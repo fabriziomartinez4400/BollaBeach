@@ -1,0 +1,45 @@
+/* Users list table: vertically center headers and cells */
+.users-php .wp-list-table tbody td,
+.users-php .wp-list-table thead th {
+  vertical-align: middle;
+}
+
+/* Tooltip trigger and content */
+.wcusage-tooltip-trigger {
+  pointer-events: visible;
+  cursor: pointer;
+  color: darkblue;
+  text-decoration: none;
+}
+.wcusage-tooltip-content {
+  width: auto;
+  max-width: 250px;
+  min-width: 125px;
+}
+.wcusage-tooltip-inner {
+  font-size: 12px;
+}
+
+/* Buttons inside tooltip */
+.wcu-affiliate-tooltip-dashboard-button,
+.wcu-affiliate-tooltip-edit-button,
+.wcu-affiliate-tooltip-unlink-button {
+  text-decoration: underline;
+}
+
+/* Copyable link input + button */
+.wcusage-copyable-link { margin: 10px 0; }
+.wcusage-copy-link-text {
+  max-width: 125px;
+  width: 75%;
+  max-height: 24px;
+  min-height: 24px;
+  font-size: 10px;
+}
+.wcusage-copy-link-button {
+  max-height: 24px;
+  min-height: 24px;
+}
+
+/* Tooltip info labels */
+.wcusage-info-label { color: #b7dbdb; }

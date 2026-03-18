@@ -1,0 +1,237 @@
+.wp-list-table .column-cb {
+    width: 40px !important;
+}
+.wp-list-table .column-cb input, .check-column input {
+    margin-top: 1px !important;
+    margin-left: 0px !important;
+}
+.wp-list-table .column-ID {
+    width: 130px;
+    text-align: center;
+}
+.wp-list-table .column-email {
+    width: 50px;
+}
+.wp-list-table .column-unpaidcommission {
+    width: 150px;
+    text-align: center;
+}
+.wp-list-table .column-view_affiliate {
+    width: 120px;
+    text-align: center;
+}
+.wcusage-avatar { 
+    border-radius: 50% !important; 
+    width: 40px !important; 
+    height: 40px !important; 
+    object-fit: cover !important; 
+    display: inline-block !important;
+    vertical-align: middle;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+.wcusage-idcell { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 8px; 
+}
+.wcusage-id-link { 
+    font-weight: 600; 
+}
+/* Add spacing between multiple affiliate coupon items */
+.wp-list-table .column-affiliateinfo .wcusage-users-affiliate-column {
+    display:block;
+    margin: 4px 0;
+}
+/* Wrapper to contain the scrollable area with overflow visible */
+.wcusage-affiliate-coupons-wrapper {
+    position: relative;
+    overflow: visible;
+}
+/* Scrollable container for affiliate coupons when more than 2 */
+.wcusage-affiliate-coupons-scrollable {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+/* Ensure the table column allows overflow */
+.wp-list-table .column-affiliateinfo {
+    overflow: visible !important;
+}
+/* Tooltip should be positioned relative to wrapper, not scrollable */
+.wcusage-affiliate-coupons-wrapper .custom-tooltip {
+    position: static;
+}
+/* Force hide original tooltips inside scrollable container - only show clones */
+.wcusage-affiliate-coupons-scrollable .custom-tooltip .tooltip-content {
+    display: none !important;
+}
+/* Ensure tooltips appended directly to wrapper maintain styles */
+.wcusage-affiliate-coupons-wrapper > .tooltip-content,
+.wcusage-affiliate-coupons-wrapper .tooltip-content {
+    position: absolute !important;
+    z-index: 99999 !important;
+}
+/* Apply all tooltip styles to cloned tooltips in wrapper */
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone {
+    display: block !important;
+    position: absolute !important;
+    text-align: center;
+    width: 200px !important;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    color: #ecf0f1 !important;
+    padding: 14px 18px 14px 18px !important;
+    border: none !important;
+    border-radius: 12px !important;
+    z-index: 99999 !important;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone p {
+    color: #ecf0f1 !important;
+    margin: 0 0 12px 0;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone a:not(.wcusage-copy-link-button) {
+    color: #3498db !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone a:not(.wcusage-copy-link-button):hover {
+    color: #5dade2 !important;
+}
+/* Copyable link styling for cloned tooltips */
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone .wcusage-copyable-link {
+    margin: 8px 0 6px 0;
+    text-align: center;
+}
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone .wcusage-copyable-link strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 11px;
+    color: #bdc3c7 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone .wcusage-copy-link-text {
+    flex: 1;
+    min-height: 28px !important;
+    max-height: 28px !important;
+    font-size: 10px !important;
+    padding: 4px 6px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 4px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ecf0f1 !important;
+    text-align: left !important;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+    margin-bottom: 0 !important;
+}
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone .wcusage-copy-link-button {
+    flex-shrink: 0;
+    min-height: 28px !important;
+    max-height: 28px !important;
+    padding: 4px 8px !important;
+    background: #3498db !important;
+    border: none !important;
+    border-radius: 4px !important;
+    color: white !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+}
+.wcusage-affiliate-coupons-wrapper > .wcusage-tooltip-clone .wcusage-copy-link-button:hover {
+    background: #2980b9 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3) !important;
+}
+/* Vertically center all table cell contents on this page */
+.wp-list-table tbody td,
+.wp-list-table thead th {
+    vertical-align: middle;
+}
+.wp-list-table.mlausers tbody td,
+.wp-list-table.mlausers thead th {
+    vertical-align: middle !important;
+}
+/* On smaller screens, stack avatar above the ID */
+@media screen and (max-width: 1500px) {
+    .wcusage-idcell { 
+        flex-direction: column; 
+        gap: 4px; 
+    }
+    .wp-list-table .column-ID { 
+        width: 80px; 
+    }
+}
+
+/* =========================================================
+   MLA Users Table column widths
+   ========================================================= */
+.wp-list-table .column-mla_sub_affiliates {
+    width: 120px;
+    text-align: center;
+}
+.wp-list-table .column-mla_payouts {
+    width: 160px;
+    text-align: center;
+}
+.wp-list-table .column-mla_tiers {
+    width: 110px;
+    text-align: center;
+}
+.wp-list-table .column-view_mla_affiliate {
+    width: 160px;
+    text-align: center;
+}
+th.column-mla_sub_affiliates,
+th.column-mla_payouts,
+th.column-mla_tiers,
+th.column-view_mla_affiliate {
+    text-align: center;
+}
+
+/* =========================================================
+   MLA Users Table — ID cell & checkbox overrides
+   (must win over admin-style.css padding: 22px 5px !important)
+   ========================================================= */
+.wp-list-table.mlausers .column-cb {
+    width: 40px !important;
+}
+.wp-list-table.mlausers .column-ID {
+    vertical-align: middle !important;
+}
+.wp-list-table.mlausers td.column-ID {
+    vertical-align: middle !important;
+}
+.wp-list-table.mlausers .wcusage-idcell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.wp-list-table.mlausers .wcusage-avatar {
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    flex-shrink: 0;
+}

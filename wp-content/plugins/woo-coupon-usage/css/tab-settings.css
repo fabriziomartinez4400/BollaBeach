@@ -1,0 +1,88 @@
+.wcu-settings-tabs {
+    margin-bottom: 20px;
+}
+
+.wcu-settings-tab-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.wcu-settings-tab-nav li {
+    margin: 0;
+    list-style: none;
+}
+.wcu-settings-tab-nav li::marker {
+    content: none;
+}
+
+.wcu-settings-tab-nav a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #0073aa;
+    border-bottom: 2px solid transparent;
+}
+
+.wcu-settings-tab-nav li.active a {
+    color: #000;
+    border-bottom: 2px solid #0073aa;
+}
+
+#wcu-settings-update-button {
+    margin-top: 20px;
+}
+
+.wcu-settings-tab-content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+    background: #fff;
+}
+
+.wcu-settings-tab-pane {
+    display: none;
+}
+
+.wcu-settings-tab-pane.active {
+    display: block;
+}
+
+/* Payout type sections - hide by default, show with wcu-show class */
+.wcu-payout-type-custom1,
+.wcu-payout-type-custom2,
+.wcu-payout-type-banktransfer,
+.wcu-payout-type-paypalapi,
+.wcu-payout-type-wisebank,
+.wcu-payout-type-stripeapi,
+.wcu-payout-type-credit {
+    display: none !important;
+}
+
+.wcu-payout-type-custom1.wcu-show,
+.wcu-payout-type-custom2.wcu-show,
+.wcu-payout-type-banktransfer.wcu-show,
+.wcu-payout-type-paypalapi.wcu-show,
+.wcu-payout-type-wisebank.wcu-show,
+.wcu-payout-type-stripeapi.wcu-show,
+.wcu-payout-type-credit.wcu-show {
+    display: block !important;
+}
+
+.wcu-settings-tab-content .profile-picture img {
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+}
+
+.admin-edit-account {
+    opacity: 0.5;
+}
+
+.wcu-settings-tab-content #wcu-settings-ajax-message {
+    margin-bottom: 20px;
+}

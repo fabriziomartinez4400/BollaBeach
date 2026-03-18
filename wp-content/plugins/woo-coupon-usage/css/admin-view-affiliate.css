@@ -1,0 +1,1352 @@
+/* Admin View Affiliate Page Styles */
+
+/* Font Awesome Link */
+.wcusage-font-awesome-link {
+    display: none;
+}
+
+/* Main Page Styles */
+.wcusage-affiliate-view-page {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+}
+
+.wcusage-affiliate-view-page::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.admin_page_wcusage_view_affiliate #wpfooter {
+    clear: both !important;
+}
+
+/* Main Layout */
+.wcusage-main-content {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+    clear: both;
+}
+
+.wcusage-content-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.wcusage-sidebar {
+    width: 350px;
+    flex-shrink: 0;
+}
+
+/* Filters layout */
+.wcusage-filters {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.wcusage-filters input[type="date"],
+.wcusage-filters input[type="text"],
+.wcusage-filters select {
+    max-width: 100%;
+}
+
+/* Modern Form Styling - Clean and Simple */
+.wcusage-form-body {
+    padding: 25px 10px;
+}
+
+.wcusage-form-section {
+    margin-bottom: 24px;
+}
+
+.wcusage-form-section h4 {
+    margin: 0 0 16px 0;
+    color: #23282d;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #007cba;
+}
+
+.wcusage-form-group {
+    margin-bottom: 16px;
+}
+
+.wcusage-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+}
+
+.wcusage-form-group input[type="text"],
+.wcusage-form-group input[type="email"],
+.wcusage-form-group input[type="url"],
+.wcusage-form-group input[type="date"],
+.wcusage-form-group input[type="number"],
+.wcusage-form-group select,
+.wcusage-form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.wcusage-form-group input[type="text"]:focus,
+.wcusage-form-group input[type="email"]:focus,
+.wcusage-form-group input[type="url"]:focus,
+.wcusage-form-group input[type="date"]:focus,
+.wcusage-form-group input[type="number"]:focus,
+.wcusage-form-group select:focus,
+.wcusage-form-group textarea:focus {
+    border-color: #007cba;
+    box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.1);
+    outline: none;
+}
+
+.wcusage-form-group input[readonly] {
+    background: #f9fafb;
+    cursor: not-allowed;
+    border-color: #e5e7eb;
+}
+
+/* Checkbox styling */
+.wcusage-form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: #007cba;
+}
+
+.wcusage-form-group .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.wcusage-form-group .checkbox-group:last-child {
+    margin-bottom: 0;
+}
+
+.wcusage-form-group .checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Select dropdown styling */
+.wcusage-form-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+    appearance: none;
+}
+
+/* Table styling for plugin fields */
+.wcusage-form-group table.form-table {
+    margin: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.wcusage-form-group table.form-table tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.wcusage-form-group table.form-table tr:last-child {
+    border-bottom: none;
+}
+
+.wcusage-form-group table.form-table th,
+.wcusage-form-group table.form-table td {
+    padding: 8px 0;
+    border: none;
+    background: transparent;
+    vertical-align: top;
+}
+
+.wcusage-form-group table.form-table th {
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+    width: 200px;
+    padding-right: 16px;
+}
+
+.wcusage-form-group table.form-table td input[type="text"],
+.wcusage-form-group table.form-table td input[type="email"],
+.wcusage-form-group table.form-table td input[type="url"],
+.wcusage-form-group table.form-table td input[type="date"],
+.wcusage-form-group table.form-table td input[type="number"],
+.wcusage-form-group table.form-table td select,
+.wcusage-form-group table.form-table td textarea {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Description text styling */
+.wcusage-form-group .description,
+.wcusage-form-group small {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+    line-height: 1.4;
+}
+
+/* Scrollable sections for long content */
+.wcusage-scrollable-section {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 12px;
+    background: #fafafa;
+}
+
+/* Button styling within tables */
+.wcusage-form-group .button,
+.wcusage-form-group .button-primary,
+.wcusage-form-group .button-secondary {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 0;
+}
+
+.wcusage-form-group .button-primary {
+    background: #007cba;
+    color: white;
+    border: 1px solid #007cba;
+}
+
+.wcusage-form-group .button-primary:hover {
+    background: #005a87;
+}
+
+.wcusage-form-group .button-secondary {
+    background: #6b7280;
+    color: white;
+    border: 1px solid #6b7280;
+}
+
+.wcusage-form-group .button-secondary:hover {
+    background: #4b5563;
+}
+
+.wcusage-form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.wcusage-form-row .wcusage-form-group {
+    flex: 1;
+}
+
+.wcusage-btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    background: #fff;
+}
+
+.wcusage-btn-primary {
+    background: #007cba;
+    color: white;
+    border-color: #007cba;
+}
+
+.wcusage-btn-primary:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+.wcusage-btn-secondary {
+    background: #6b7280;
+    color: white;
+    border-color: #6b7280;
+}
+
+.wcusage-btn-secondary:hover {
+    background: #4b5563;
+}
+
+/* Form table inputs in plugin sections (apply same styling as Basic Information) */
+.wcusage-form-section .form-table input[type="text"].regular-text,
+.wcusage-form-section .form-table input[type="email"].regular-text,
+.wcusage-form-section .form-table input[type="url"].regular-text,
+.wcusage-form-section .form-table input[type="date"].regular-text,
+.wcusage-form-section .form-table input[type="number"].regular-text,
+.wcusage-form-section .form-table select.regular-text,
+.wcusage-form-section .form-table select,
+.wcusage-form-section .form-table textarea.regular-text {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.wcusage-form-section .form-table input[type="text"].regular-text:focus,
+.wcusage-form-section .form-table input[type="email"].regular-text:focus,
+.wcusage-form-section .form-table input[type="url"].regular-text:focus,
+.wcusage-form-section .form-table input[type="date"].regular-text:focus,
+.wcusage-form-section .form-table input[type="number"].regular-text:focus,
+.wcusage-form-section .form-table select.regular-text:focus,
+.wcusage-form-section .form-table select:focus,
+.wcusage-form-section .form-table textarea.regular-text:focus {
+    border-color: #007cba;
+    box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.1);
+    outline: none;
+}
+
+.wcusage-form-section .form-table input[readonly].regular-text {
+    background: #f9fafb;
+    cursor: not-allowed;
+    border-color: #e5e7eb;
+}
+
+/* Checkbox styling in form tables */
+.wcusage-form-section .form-table input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: #007cba;
+}
+
+/* Select dropdown styling in form tables */
+.wcusage-form-section .form-table select.regular-text,
+.wcusage-form-section .form-table select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+    appearance: none;
+}
+
+/* Sidebar Styling */
+.wcusage-affiliate-info-box {
+    background: #fff;
+    border: 1px solid #e1e5e9;
+    border-radius: 4px;
+    overflow: hidden;
+    /* position: sticky removed */
+}
+
+.wcusage-affiliate-info-box h3 {
+    margin: 0;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    color: #23282d;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.wcusage-affiliate-info-box .info-content {
+    padding: 16px;
+}
+
+.wcusage-affiliate-info-box .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.wcusage-affiliate-info-box .info-row:last-child {
+    border-bottom: none;
+}
+
+.wcusage-affiliate-info-box .info-label {
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+}
+
+.wcusage-affiliate-info-box .info-value {
+    color: #6b7280;
+    font-size: 14px;
+    text-align: right;
+}
+
+.wcusage-affiliate-info-box .info-value a {
+    color: #007cba;
+    text-decoration: none;
+}
+
+.wcusage-affiliate-info-box .info-value a:hover {
+    text-decoration: underline;
+}
+
+/* Tab Styling Updates */
+.wcusage-tabs {
+    background: none !important;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 99;
+    clear: both;
+}
+
+.wcusage-tabs .nav-tab {
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    padding: 14px 20px;
+    margin: 0;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.wcusage-tabs .nav-tab:hover {
+    background: #f8f9fa;
+    color: #374151;
+}
+
+.wcusage-tabs .nav-tab.wcusage-tab-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.wcusage-tabs .nav-tab-active {
+    background: #007cba;
+    color: white;
+}
+
+.wcusage-tabs .nav-tab-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* Tab Content Styling */
+.wcusage-tab-content {
+    background: #fff;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    overflow: visible;
+}
+
+.tab-content {
+    padding: 24px;
+}
+
+.tab-content h3 {
+    color: #23282d;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #007cba;
+}
+
+.tab-content h3 i {
+    margin-right: 10px;
+    color: #007cba;
+}
+
+/* Affiliate Coupons table: full width on large screens */
+#tab-overview table.wp-list-table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    white-space: normal;
+    overflow: visible;
+}
+
+/* Make all columns equal width in the affiliate coupons table */
+#tab-overview table.wp-list-table th,
+#tab-overview table.wp-list-table td {
+    width: 1%;
+}
+
+/* Prevent tooltip clipping inside the affiliate coupons table */
+#tab-overview table.wp-list-table thead,
+#tab-overview table.wp-list-table tbody,
+#tab-overview table.wp-list-table tr,
+#tab-overview table.wp-list-table th,
+#tab-overview table.wp-list-table td {
+    overflow: visible !important;
+    position: relative;
+}
+
+/* Keep header tooltips compact and unclipped */
+#tab-overview table.wp-list-table th .custom-tooltip {
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+/* Center align all columns in the Coupons table */
+#tab-overview table.wp-list-table th,
+#tab-overview table.wp-list-table td {
+    text-align: center !important;
+}
+
+/* Small consistent padding on Coupons table cells */
+#tab-overview table.wp-list-table th,
+#tab-overview table.wp-list-table td {
+    padding: 10px 7px !important;
+}
+
+/* Restore Quick Edit row styling: left-align and comfy padding */
+#tab-overview table.wp-list-table tr.quick-edit-row > td {
+    text-align: left !important;
+    padding: 10px 12px !important;
+}
+
+/* Compact View Dashboard button inside the table (independent of column order) */
+#tab-overview table.wp-list-table a.wcusage-view-dashboard-btn {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    line-height: 1.6 !important;
+}
+/* Fallback: if Dashboard is the last column, still compact generic large buttons */
+#tab-overview table.wp-list-table td:last-child a.button.button-large {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    line-height: 1.6 !important;
+}
+
+/* Inline actions: Quick Edit | Edit | Delete on one line */
+.wcusage-actions-inline {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex-wrap: wrap; /* allow wrapping so links can move below Quick Edit */
+    white-space: normal;
+    justify-content: center; /* center align actions */
+}
+.wcusage-actions-inline .button.button-large.button-primary { /* compact large button to fit with links */
+    font-size: 12px;
+    padding: 2px 8px; /* compact button size */
+    height: auto;
+    box-shadow: none;
+    flex: 0 0 auto; /* auto width */
+    margin: 0 0 2px 0; /* small gap before icons */
+}
+.wcusage-actions-inline .button.button-large.button-primary::after {
+    content: "";
+    display: block;
+    width: 100%; /* force next items to wrap to new line */
+}
+.wcusage-actions-stack .wcusage-delete-action {
+    color: #7a0707;
+    border: 1px solid #e1e1e1;
+    background: #fff;
+}
+
+/* Inline links under Quick Edit */
+.wcusage-actions-inline .sep { color: #999; margin: 0 4px; }
+.wcusage-inline-link { font-size: 12px; text-decoration: none; }
+.wcusage-inline-link:hover { text-decoration: underline; }
+.wcusage-delete-link { color: #7a0707; }
+
+/* Icon-only actions for Edit/Delete using Dashicons */
+.wcusage-actions-inline .sep { display: none; }
+.wcusage-actions-inline .wcusage-inline-link {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0; /* hide text label visually */
+    line-height: 1;
+}
+.wcusage-actions-inline .wcusage-inline-link::before {
+    font-family: dashicons;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    content: "\f464"; /* pencil/edit */
+}
+.wcusage-actions-inline .wcusage-delete-link::before {
+    content: "\f182"; /* trash */
+}
+.wcusage-actions-inline .wcusage-inline-link:hover { text-decoration: none; }
+
+/* Hide referral link text input so only copy button shows */
+.wcusage-tab-content .wcusage-copy-link-text {
+    display: none !important;
+}
+
+/* Copy link button hover */
+.wcusage-tab-content .wcusage-copy-link-button {
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+.wcusage-tab-content .wcusage-copy-link-button:hover {
+    background: #007cba !important;
+    border-color: #007cba !important;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 124, 186, 0.35);
+}
+.wcusage-tab-content .wcusage-copy-link-button:hover i {
+    color: #fff;
+}
+.wcusage-tab-content .wcusage-copy-link-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Ensure all tables inside tab content fill container width on large screens */
+.wcusage-tab-content table.wp-list-table { width: 100%; }
+
+/* On smaller screens, allow horizontal scroll and prevent squashing */
+@media (max-width: 1320px) {
+    #tab-overview table.wp-list-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        min-width: 100%;
+    }
+}
+
+/* Ensure no hidden overflow hides the table on the page (only on narrower screens) */
+@media (max-width: 1320px) {
+    .wcusage-affiliate-view-page,
+    .wcusage-main-content,
+    .wcusage-content-left,
+    .wcusage-tab-content,
+    #tab-overview {
+        overflow: visible !important;
+    }
+}
+/* On wider screens, prevent bleed into the sidebar by containing horizontal overflow */
+@media (min-width: 1281px) {
+    .wcusage-content-left,
+    .wcusage-tab-content {
+        overflow-x: auto; /* contain any accidental over-wide content instead of overlapping sidebar */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1320px) {
+    .wcusage-main-content {
+    flex-direction: column;
+    gap: 18px;
+    }
+
+    .wcusage-sidebar {
+        width: 100%;
+    position: static; /* ensure non-sticky */
+    }
+
+    .wcusage-affiliate-info-box {
+    position: static; /* ensure non-sticky */
+    }
+
+    /* Make tab bar horizontally scrollable on smaller screens */
+    .wcusage-tabs {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0;
+    }
+    .wcusage-tabs .nav-tab {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+    .tab-content {
+        padding: 16px;
+    }
+
+    /* Tables: allow horizontal scroll on tablets too */
+    .tab-content table.wp-list-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Compact paddings and font sizes */
+    .wcusage-form-body { padding: 16px 8px; }
+    .tab-content h3 { font-size: 18px; margin-bottom: 16px; }
+    .wcusage-stat-box { padding: 16px; }
+
+    /* Tables: allow horizontal scroll instead of squashing */
+    .tab-content table.wp-list-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    .wp-list-table th, .wp-list-table td { padding: 8px 10px; }
+
+    /* Filters stack nicely */
+    .wcusage-filters { gap: 6px; }
+    .wcusage-filters .button { width: auto; }
+}
+
+/* Hide less important columns on very small screens */
+@media (max-width: 600px) {
+    /* Referrals: hide Customer and Coupon Code */
+    #tab-referrals table.wp-list-table th:nth-child(3),
+    #tab-referrals table.wp-list-table td:nth-child(3),
+    #tab-referrals table.wp-list-table th:nth-child(4),
+    #tab-referrals table.wp-list-table td:nth-child(4) {
+        display: none;
+    }
+
+    /* Visits: hide Landing Page, Referrer URL, IP Address, and Action */
+    #tab-visits table.wp-list-table th:nth-child(3),
+    #tab-visits table.wp-list-table td:nth-child(3),
+    #tab-visits table.wp-list-table th:nth-child(4),
+    #tab-visits table.wp-list-table td:nth-child(4),
+    #tab-visits table.wp-list-table th:nth-child(5),
+    #tab-visits table.wp-list-table td:nth-child(5),
+    #tab-visits table.wp-list-table th:nth-child(8),
+    #tab-visits table.wp-list-table td:nth-child(8) {
+        display: none;
+    }
+
+    /* Filters: full-width inputs */
+    .wcusage-filters input[type="date"],
+    .wcusage-filters input[type="text"],
+    .wcusage-filters select {
+        flex: 1 1 100%;
+    }
+}
+
+/* Existing styles */
+.wcusage-stat-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.wcusage-stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #007cba;
+}
+
+.wcusage-stat-box:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.wcusage-stat-box .stat-value {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 700;
+    color: #23282d;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.wcusage-stat-box .stat-label {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wcusage-coupon-dropdown {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.wcusage-coupon-dropdown label {
+    font-weight: 600;
+    display: inline-block;
+    width: 140px;
+    color: #23282d;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wcusage-affiliate-info-box .info-row:last-child {
+    margin-bottom: 0;
+}
+
+.wcusage-tabs {
+    margin-bottom: 30px;
+    border-bottom: none;
+    background: #fff;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wcusage-tabs .nav-tab {
+    border: none;
+    background: #f9f9f9ff;
+    color: #555;
+    text-decoration: none;
+    padding: 16px 24px;
+    margin-right: 0;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    border-right: 1px solid #e1e1e1;
+}
+
+.wcusage-tabs .nav-tab:hover {
+    background: #e1e1e1;
+    color: #23282d;
+}
+
+.wcusage-tabs .nav-tab:last-child {
+    border-right: none;
+}
+
+.wcusage-tabs .nav-tab-active {
+    background: #fff;
+    color: #23282d;
+    border-bottom: 3px solid #007cba;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.wcusage-tab-content {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 0 10px 10px 10px;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: -5px;
+    position: relative;
+}
+
+.wcusage-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Limit to maximum 3 columns on larger screens */
+@media (min-width: 1200px) {
+    .wcusage-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.wcusage-stat-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: visible;
+}
+
+.wcusage-stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #007cba;
+}
+
+.wcusage-stat-box:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.wcusage-stat-box .stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #23282d;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.wcusage-stat-box .stat-label {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wcusage-coupon-dropdown {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.wcusage-coupon-dropdown select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    color: #23282d;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.wcusage-coupon-dropdown select:focus {
+    border-color: #007cba;
+    box-shadow: 0 0 0 2px rgba(0,123,186,0.1);
+    outline: none;
+}
+
+/* Modern Table Styling */
+.wp-list-table.widefat.fixed.striped {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.wp-list-table.widefat.fixed.striped thead th {
+    background: #f8f9fa;
+    color: #23282d;
+    font-weight: 600;
+    padding: 15px 12px;
+    border-bottom: 2px solid #ddd;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wp-list-table.widefat.fixed.striped tbody tr {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.wp-list-table.widefat.fixed.striped tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.wp-list-table.widefat.fixed.striped tbody tr:hover {
+    background: #e9ecef;
+}
+
+.wp-list-table.widefat.fixed.striped tbody td {
+    padding: 15px 12px;
+    border: none;
+    vertical-align: middle;
+    color: #23282d;
+}
+
+/* Status badges */
+.order-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.order-status.status-completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.order-status.status-on-hold {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.order-status.status-cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.order-status.status-processing {
+    background: #cce5ff;
+    color: #004085;
+}
+
+/* Button styling */
+.wcusage-tab-content .button {
+    background: #007cba;
+    border: 1px solid #007cba;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.wcusage-tab-content .button:hover {
+    background: #005a87;
+    border-color: #005a87;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .wcusage-affiliate-info-box {
+        padding: 20px;
+    }
+
+    .wcusage-tabs .nav-tab {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .wcusage-tab-content {
+        padding: 20px;
+    }
+
+    .wcusage-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .wp-list-table.widefat.fixed.striped {
+        font-size: 14px;
+    }
+
+    .wp-list-table.widefat.fixed.striped thead th,
+    .wp-list-table.widefat.fixed.striped tbody td {
+        padding: 10px 8px;
+    }
+}
+
+/* Enhanced tab content visibility */
+.wcusage-tab-content > div {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.wcusage-tab-content > div.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Back button styling */
+.page-title-action {
+    background: #007cba;
+    border: 1px solid #007cba;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.page-title-action:hover {
+    background: #005a87;
+    border-color: #005a87;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Back button mobile tweaks */
+.wcusage-back-button { max-width: 100%; }
+@media (max-width: 782px) {
+    .wcusage-back-button {
+        float: none !important;
+        display: inline-flex;
+        align-items: center;
+        margin: 8px 0 12px;
+        padding: 8px 14px;
+        font-size: 13px;
+        line-height: 1.3;
+    }
+    .wp-heading-inline { display: block; margin-bottom: 6px !important; }
+}
+
+/* Mobile header layout */
+@media (max-width: 782px) {
+    /* Stack the heading block so it takes full width */
+    .wp-heading-inline {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 12px !important;
+    }
+
+    /* Center the avatar */
+    .wcusage-user-avatar {
+        margin: 0 0 8px 0 !important;
+    }
+
+    /* Dashboard buttons: wrap and center beneath avatar/name */
+    .wp-heading-inline .wcusage-preview-button {
+        margin: 6px 0 0 0 !important;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        display: inline-flex;
+        box-sizing: border-box;
+    }
+
+    /* Right-side container: un-float and center below the heading */
+    .wcusage-view-affiliate-header-actions {
+        float: none !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .wcusage-view-affiliate-header-actions .wcusage-back-button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        margin: 0 !important;
+    }
+
+    .wcusage-view-affiliate-header-actions .wcusage-delete-dropdown {
+        margin-top: 8px !important;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* User Avatar Styling */
+.wcusage-user-avatar {
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 2px solid #e1e5e9;
+    transition: border-color 0.2s ease;
+    width: 64px;
+    height: 64px;
+}
+
+.wcusage-user-avatar:hover {
+    border-color: #007cba;
+}
+
+/* Inline style replacements */
+.wcusage-heading-inline {
+    color: #23282d;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.wcusage-float-right {
+    float: right;
+}
+
+.wcusage-margin-right-5 {
+    margin-right: 5px;
+}
+
+.wcusage-margin-right-8 {
+    margin-right: 8px;
+}
+
+/* Mobile tab dropdown */
+.wcusage-tab-select-wrapper {
+    display: none;
+}
+@media (max-width: 782px) {
+    .wcusage-tabs {
+        display: none !important;
+    }
+    .wcusage-tab-select-wrapper {
+        display: block;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .wcusage-tab-select {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px 16px;
+        text-align: center;
+        font-size: 20px !important;
+        font-weight: 500;
+        border: 2px solid #007cba;
+        border-radius: 6px;
+        background: #fff;
+        color: #23282d;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23007cba' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 10px;
+        cursor: pointer;
+    }
+    .wcusage-tab-select:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0,124,186,0.25);
+    }
+}
+
+/* --- Mobile overflow fixes: ensure tabs and tables can scroll horizontally --- */
+/* Tabs: always allow horizontal scroll if needed */
+.wcusage-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto !important; /* override earlier hidden */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.wcusage-tabs .nav-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+/* Table containers: make wrappers scroll horizontally on small screens */
+#wcusage-referrals-table-container,
+#wcusage-visits-table-container,
+#wcusage-payouts-table-container,
+#wcusage-activity-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure tables themselves don't get clipped; allow wide content */
+@media (max-width: 1320px) {
+    .wcusage-tab-content table.wp-list-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto !important; /* override any global overflow */
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.wcusage-margin-right-10 {
+    margin-right: 10px;
+}
+
+.wcusage-margin-left-5 {
+    margin-left: 5px;
+}
+
+.wcusage-tab-heading {
+    color: #23282d;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #007cba;
+    padding-bottom: 10px;
+}
+
+.wcusage-icon-color-primary {
+    color: #007cba;
+}
+
+.wcusage-margin-top-neg20 {
+    margin-top: -20px;
+}
+
+.wcusage-margin-bottom-40 {
+    margin-bottom: 40px;
+}
+
+.wcusage-padding-5-10 {
+    padding: 5px 10px;
+}
+
+.wcusage-border-black {
+    border: 1px solid #000000ff;
+}
+
+.wcusage-border-radius-4 {
+    border-radius: 4px;
+}
+
+.wcusage-bg-light-red {
+    background-color: #ffc2c2ff;
+}
+
+.wcusage-font-size-12 {
+    font-size: 12px;
+}
+
+.wcusage-bg-light-gray {
+    background: #f8f9fa;
+}
+
+.wcusage-padding-2-4 {
+    padding: 2px 4px;
+}
+
+.wcusage-border-radius-3 {
+    border-radius: 3px;
+}
+

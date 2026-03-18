@@ -1,0 +1,1638 @@
+{
+  "plugin_slug": "nsc_bar-cookie-consent",
+  "plugin_name": "Beautiful and responsive cookie consent",
+  "plugin_prefix": "nsc_bar_",
+  "settings_page_configs": {
+    "page_title": "Cookie Consent Banner - Settings",
+    "menu_title": "Cookie Consent Banner",
+    "capability": "manage_options",
+    "description": ""
+  },
+  "setting_page_fields": {
+    "active_tab_slug": "",
+    "active_tab_index": 0,
+    "tabs": [
+      {
+        "tabname": "General",
+        "tab_description": "",
+        "tab_tipps": "",
+        "tab_slug": "general",
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "activate_banner",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "<strong>Important:</strong> The Information if a user as seen the banner is stored in cookie which is not resetted, when deactivating this plugin. If you want to reset user settings you can rename the cookie name.",
+            "name": "Enable Cookie Banner",
+            "save_in_db": true
+          },
+          {
+            "field_slug": "activate_test_banner",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "pre_selected_value": true,
+            "extra_validation_name": false,
+            "helpertext": "If checked you see the banner in the settings section and your consent cookie will be deleted with every admin page view. So you can see the banner more often in the frontend.",
+            "name": "Preview Banner",
+            "save_in_db": true,
+            "newBanner": false
+          },
+          {
+            "field_slug": "backend_cookie_conversion",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "pre_selected_value": false,
+            "extra_validation_name": false,
+            "helpertext": "In most browser cookies set by javascript are only valid for a short period of time. Without this setting your user will see the banner after that time again, which can be annoying. By checking this option, the cookie is converted to a backend cookie and the defined expiration is restored. Default expiration is 365 days.",
+            "name": "Prevent premature cookie deletion (use backend cookie)",
+            "save_in_db": true
+          },
+          {
+            "field_slug": "improveBannerLoadingSpeed",
+            "type": "select",
+            "save_as": "string",
+            "required": false,
+            "selectable_values": [
+              { "value": "0", "name": "load (default)" },
+              {
+                "value": "1",
+                "name": "DOMContentLoaded (fastest)"
+              },
+              { "value": "2", "name": "readystatechange, ready" }
+            ],
+            "extra_validation_name": false,
+            "pre_selected_value": "0",
+            "helpertext": "This might improve the banner loading speed. Default is 'load'. Test properly! In some installations this might break the banner.",
+            "name": "JS event to load banner",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "capabilityCustom",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bara_capabilityCustom",
+            "pre_selected_value": "manage_options",
+            "helpertext": "Per default the banner settings are shown to all users with capability 'manage_options'. You can change that here. Roles and capability see <a href='https://wordpress.org/support/article/roles-and-capabilities/' target='_blank'>here</a>. To activate please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "WP capability for banner settings",
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "reloadAfterBannerClick",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Not working in admin preview! Only in frontend. Reloads whole page after consent change. <strong>If you use the Google Tag Manager integration this might not be necessary, check the tab 'Google Tag Manager'</strong>. Depending on your tracking set up, you might need a reload of the page after an opt in to track the page on which the user opted in. Useful when auto block is enabled, too.",
+            "name": "Reload after Bannerclick",
+            "save_in_db": true,
+            "newBanner": true
+          }
+        ]
+      },
+      {
+        "tabname": "Banner 2 settings",
+        "tab_description": "premium_addon_desc.html",
+        "tab_tipps": "",
+        "tab_slug": "new_banner",
+        "active": false,
+        "tabfields": []
+      },
+      {
+        "tabname": "Appearance",
+        "tab_description": "",
+        "tab_tipps": "",
+        "tab_slug": "banner_colors",
+        "active": false,
+        "newBanner": false,
+        "tabfields": [
+          {
+            "field_slug": "theme",
+            "type": "select",
+            "save_as": "string",
+            "required": false,
+            "selectable_values": [
+              { "value": "block", "name": "Block" },
+              {
+                "value": "classic",
+                "name": "Classic"
+              },
+              { "value": "edgeless", "name": "Edgeless" }
+            ],
+            "extra_validation_name": false,
+            "pre_selected_value": "block",
+            "helpertext": "",
+            "name": "Theme",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "position",
+            "type": "select",
+            "save_as": "string",
+            "required": false,
+            "selectable_values": [
+              { "value": "top", "name": "Top" },
+              {
+                "value": "bottom",
+                "name": "Bottom"
+              },
+              { "value": "bottom-left", "name": "Float bottom left" },
+              { "value": "bottom-right", "name": "Float bottom right" },
+              { "value": "top-left", "name": "Float top left" },
+              { "value": "top-right", "name": "Float top  right" },
+              { "value": "centered", "name": "Centered" }
+            ],
+            "extra_validation_name": false,
+            "pre_selected_value": "bottom",
+            "helpertext": "Set the position of the Banner.",
+            "name": "Position",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "blockScreen",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Activate this, to block the page content, until the banner is closed. You force the user to make a choice.",
+            "name": "Block Page, if Banner shown",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "showCloseX",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "You can show an additional 'x' to close the banner. Depending on the compliance type the cookie value will be: allow, deny or savesettings",
+            "name": "Show x to close banner",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_close",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "",
+            "pre_selected_value": "x",
+            "helpertext": "Per default it is an 'x'. Here you can change this to anything you like.",
+            "name": "Text for close 'x'",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "closeXClickStatus",
+            "type": "select",
+            "save_as": "string",
+            "required": false,
+            "selectable_values": [{ "value": "default", "name": "default" }],
+            "extra_validation_name": "",
+            "pre_selected_value": "default",
+            "helpertext": "Set the consent status, if the user click on the 'x'. With default setting the value depends on the compliance type. opt-out:allow, differentiated:savesettings, opt-in: deny, just info:allow. To use this feature please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "Status close 'x'",
+            "disabled": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "container",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "",
+            "pre_selected_value": "",
+            "helpertext": "Default the banner is prepended to document.body. If you want to append it somewhere else you can use query selector here. If you want to append it to the footer tag just type in 'footer' or to use an element with an certain id: [id='page'].",
+            "name": "Position in HTML of page (querySelector)",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "forceToAppend",
+            "type": "checkbox",
+            "save_as": "boolean",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Default the banner is prepended to document.body. Here you change this to append. Needed for example, if you find the banner text in the search engine results, instead of the page content. To use this feature please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "Append Banner instead of prepend",
+            "save_in_db": false,
+            "disabled": true
+          },
+          {
+            "field_slug": "customizedFont",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_replace_doublequote_with_single",
+            "pre_selected_value": "",
+            "helpertext": "Add you desired Fonts name here, e.g. 'Catamaran-Regular', sans-serif. Please be aware that these fonts should be loaded already. You can only use already existing fonts here. It won't install them.",
+            "name": "Custom font name",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_popup_background",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#237afc",
+            "helpertext": "You can add hex #fff or rgba(100,100,100,0.9) colors here. If you want to blur the background, you need to add enough transparency to the background, e.g. rgba(100,100,100,0.5).",
+            "name": "Banner Background Color",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_popup_backgroundBlurEffect",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_text_number_only",
+            "pre_selected_value": "0px",
+            "helpertext": "To blur the background of the banner, please add here the blur in px. Uses backdrop-filter. Make sure, that `Banner Background Color` has enough transparency, e.g. rgba(100,100,100,0.5), otherwise it won't work. To remove the blur set it to 0px.",
+            "name": "Blurring Banner Background",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_popup_text",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#fff",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Banner Text Color",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_button_background",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#fff",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Button Background Color",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_button_text",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#237afc",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Button Text Color",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_button_border",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Button Border Color",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_switches_background",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "",
+            "helpertext": "Needed for compliance type 'Differentiated Consent'.",
+            "name": "Background of unselected switch",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_switches_backgroundChecked",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "",
+            "helpertext": "Needed for compliance type 'Differentiated Consent'.",
+            "name": "Background of selected switch",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_switches_switch",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "",
+            "helpertext": "Needed for compliance type 'Differentiated Consent'.",
+            "name": "Switch color",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "palette_switches_text",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "",
+            "helpertext": "Needed for compliance type 'Differentiated Consent'.",
+            "name": "Switch text label color",
+            "save_in_db": false
+          }
+        ]
+      },
+      {
+        "tabname": "Text",
+        "tab_description": "",
+        "tab_tipps": "",
+        "tab_slug": "banner_text",
+        "active": false,
+        "newBanner": false,
+        "tabfields": [
+          {
+            "field_slug": "content_dismiss",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Got it",
+            "helpertext": "Used for 'Just Info' compliance type.",
+            "name": "Button 'Dismiss' Text",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_deny",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Deny",
+            "helpertext": "Used for 'Opt-In', 'Opt-Out' and 'Differentiated Consent - 3 Buttons with Deny' compliance type.",
+            "name": "Button 'Deny Cookies' Text",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_allow",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Allow all",
+            "helpertext": "Used for 'Opt-In', 'Opt-Out' and 'Differentiated Consent - 2/3 Buttons' compliance types.",
+            "name": "Button 'Accept all Cookies' Text",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_savesettings",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Save Settings",
+            "helpertext": "Used for both 'Differentiated Consent' compliance types.",
+            "name": "Button 'Save Settings' Text",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_link",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Learn more",
+            "helpertext": "Text of link for more information, e.g. your privacy page or another page where you explain your cookies.",
+            "name": "'Learn More' Linktext",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_href",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_link_input",
+            "pre_selected_value": "https://yourdomain/dataprivacy",
+            "helpertext": "URL to your data privacy policy, for example.",
+            "name": "'Learn More' Link",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_target",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_text_only",
+            "pre_selected_value": "_blank",
+            "helpertext": "_blank: opens in new window, _self: opens in same window",
+            "name": "Target of 'Learn more' Link",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_linksecond",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Just another Link",
+            "helpertext": "Text of link a second link you can place freely in your text, with this placeholder for open in same window: {{customLink}}, for open in new window/tab: {{customLink_openNewWindow}}",
+            "name": "'Freely placeable Link' Linktext",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_hrefsecond",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_link_input",
+            "pre_selected_value": "https://yourdomain/anotherLink",
+            "helpertext": "This link be placed freely in your banner text, with this placeholder for open in same window: {{customLink}}, for open in new window/tab: {{customLink_openNewWindow}}",
+            "name": "Freely placeable Link",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_message",
+            "type": "textarea",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "This website uses cookies to ensure you get the best experience on our website.",
+            "helpertext": "You can use the following HTML tags: strong, i, a, div, span, p, br, ul, ol, li, h1, h2, h3, h4, h5, h6, hr",
+            "name": "Text for Banner",
+            "save_in_db": false
+          }
+        ]
+      },
+      {
+        "tabname": "Compliance & Behaviour",
+        "tab_description": "",
+        "tab_tipps": "tab_compliance_and_behaviour.html",
+        "tab_slug": "compliance_type",
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "type",
+            "type": "select",
+            "save_as": "string",
+            "required": false,
+            "selectable_values": [
+              { "value": "info", "name": "Just tell the user we use cookies." },
+              {
+                "value": "detailed",
+                "name": "Differentiated Consent - 1 Button"
+              },
+              {
+                "value": "detailedRev",
+                "name": "Differentiated Consent - 2 Buttons with save"
+              },
+              {
+                "value": "detailedRevDeny",
+                "name": "Differentiated Consent - 3 Buttons with deny"
+              },
+              {
+                "value": "opt-in",
+                "name": "Ask user to Opt-in"
+              },
+              {
+                "value": "opt-out",
+                "name": "Ask user to Opt-out"
+              }
+            ],
+            "extra_validation_name": false,
+            "pre_selected_value": "info",
+            "helpertext": "If you use 'Differentiated Consent', 'Opt-in' or 'Opt-out' you must make sure, that all plugins and features of your site respect that setting. More info see documentation. The user settings can be read from the cookie set by this plugin or the dataLayer.",
+            "name": "Compliance Type",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "customOrderConsentButtons",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "customConsentButtons",
+            "pre_selected_value": "{{deny}}{{savesettings}}{{allowall}}",
+            "helpertext": "You can change the oder of the buttons here. Use the placeholders {{deny}}, {{savesettings}} and {{allowall}}.",
+            "name": "Order of consent buttons",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "infoClickStatus",
+            "type": "select",
+            "save_as": "string",
+            "required": false,
+            "selectable_values": [{ "value": "default", "name": "default" }],
+            "extra_validation_name": "",
+            "pre_selected_value": "default",
+            "helpertext": "Set the consent status, if the user clicks on the one button. With default setting the value in the cookie will be dismiss, in the dataLayer 'allow'. To use this feature please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "Status for button click.",
+            "disabled": true,
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "cookietypes",
+            "type": "hidden",
+            "save_as": "array",
+            "required": true,
+            "extra_validation_name": "nsc_bar_check_cookietypes",
+            "pre_selected_value": "",
+            "helpertext": "Specify the different cookie types. Cookie Suffix: each cookie type gets an own cookie to save the acceptance status. The name is '<cookiename>'_'cookie suffix'.",
+            "name": "Cookie Types",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "makeButtonsEqual",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Per default the button which sets the highest consent is highlighted, this can be considered as dark pattern. For some regulations it is neccesary, that both have an equal weight. When ticking this box, they have same size and color.",
+            "name": "Make the buttons look equal",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "buttonOrderAllowFirst",
+            "type": "checkbox",
+            "save_as": "boolean",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": true,
+            "helpertext": "Default the banner is prepended to document.body. Here you change this to append. Needed for example, if you find the banner text in the search engine results, instead of the page content. To use this feature please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "Button 'allow' first",
+            "save_in_db": false,
+            "newBanner": false,
+            "disabled": true
+          },
+          {
+            "field_slug": "setDiffDefaultCookiesFirstPV",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Only for 'Differentiated Consent': It might be useful to have the configured default setting on first page view in a cookie, before any user interaction. Depending on your compliance requirements, it might be a legal issue.",
+            "name": "Set cookies with default values on 1st page view",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "dismissOnScroll",
+            "type": "text",
+            "save_as": "integer",
+            "required": false,
+            "extra_validation_name": "nsc_bar_integer",
+            "pre_selected_value": "",
+            "helpertext": "To disable, leave empty. To enable, set to the number of pixels a user must scroll vertically in order to trigger the dismiss.",
+            "name": "Allow on scroll",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "dismissOnTimeout",
+            "type": "text",
+            "save_as": "integer",
+            "required": false,
+            "extra_validation_name": "nsc_bar_integer",
+            "pre_selected_value": "",
+            "helpertext": "To disable, leave empty. To enable set value as time in milliseconds to autodismiss after set time.",
+            "name": "Allow on timeout (ms)",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "delayBannerShow",
+            "type": "text",
+            "save_as": "integer",
+            "required": false,
+            "extra_validation_name": "nsc_bar_integer",
+            "pre_selected_value": "",
+            "helpertext": "To use this feature please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "Delay show banner (ms)",
+            "disabled": true,
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "onPopupClose",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Not working in admin preview! Only in frontend. <strong>If you use the Google Tag Manager integration this might not be necessary, check the tab 'Google Tag Manager'</strong>. Depending on your tracking set up, you might need a reload of the page after an opt in to track the page on which the user opted in. Useful when auto block is enabled, too.",
+            "name": "Reload after Bannerclick",
+            "save_in_db": false,
+            "newBanner": false
+          },
+          {
+            "field_slug": "ask_until_acceptance",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "If checked and the user declines the usage of cookies, the banner will be shown on the next page load again, until he accepts. In case of 'Differentiated consent' the user must accept all cookie types.",
+            "name": "Ask until acceptance",
+            "save_in_db": true,
+            "newBanner": false
+          },
+          {
+            "field_slug": "disableWithiniFrames",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "0",
+            "helpertext": "Disable the banner, if the page is loaded in an iFrame.",
+            "name": "Disable in iFrames",
+            "save_in_db": false,
+            "newBanner": false
+          }
+        ]
+      },
+      {
+        "tabname": "Consent APIs",
+        "tab_description": "premium_addon_desc_consent_apis.html",
+        "tab_tipps": "",
+        "tab_slug": "googleconsentmode",
+        "internal_tabs": [
+          {
+            "id": "wpConsentApitab",
+            "name": "Wordpress Consent API",
+            "fields": [
+              "wpConsentApiStatistics",
+              "wpConsentApiStatisticsAnonymous",
+              "wpConsentApiMarketing",
+              "wpConsentApiFunctional",
+              "wpConsentApiPreferences"
+            ]
+          },
+          {
+            "id": "pixelManagerWooTab",
+            "name": "Pixel Manager for Woo",
+            "fields": [
+              "pixelManagerWooStatistics",
+              "pixelManagerWooMarketing",
+              "pixelManagerWooPreferences",
+              "pixelManagerWooNecessary"
+            ]
+          },
+          {
+            "id": "googleconsentmode",
+            "name": "Google Consent Mode",
+            "fields": [
+              "activateConsentMode",
+              "consentModeConfig",
+              "coMoAdsDataRedaction",
+              "coMoUrlPassThrough",
+              "consentModeWaitForUpdate",
+              "microsoftUETconsentMode"
+            ]
+          },
+          {
+            "id": "msconsentmode",
+            "name": "Microsoft Consent Mode",
+            "fields": ["microsoftClarityEnabled", "microsoftClarityAllowedCats"]
+          }
+        ],
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "activateConsentMode",
+            "type": "checkbox",
+            "save_as": "boolean",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Get premium add-on to enable. If enabled, Google, Microsoft Clarity and UET Consent Mode infos are pushed into the dataLayer. As soon as it is enabled all categories will be pushed with 'denied', if no option is checked.",
+            "name": "Enable Google Consent mode",
+            "disabled": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "consentModeConfig",
+            "type": "hidden",
+            "save_as": "array",
+            "required": true,
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "Define when a CoMo category shall be granted. If nothing is checked for a category, this category will default to 'denied'. If you need a CoMo category to be granted per default, check all toggles for this particular category. For more information please see the <a target='_blank' href='https://beautiful-cookie-banner.com/documentation/google-consent-mode/'>documentation<a>.",
+            "name": "Consent Mode",
+            "disabled": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "microsoftUETconsentMode",
+            "type": "checkbox",
+            "save_as": "boolean",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Google Consent Mode has to be enabled for MS UET. When checked, it will additionally set ad_storage for Microsoft UET consent mode to 'granted' for all cases where Google Consent Mode ad_storage is granted, too. In future releases this will be decoupled from Google Consent Mode.",
+            "name": "Use ad_storage for Microsoft UET consent mode, too",
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "coMoAdsDataRedaction",
+            "type": "checkbox",
+            "save_as": "boolean",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "When ads_data_redaction is true and ad_storage is denied, ad click identifiers sent in network requests by Google Ads and Floodlight tags will be redacted. Network requests will also be sent through a cookieless domain.",
+            "name": "ads_data_redaction",
+            "disabled": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "coMoUrlPassThrough",
+            "type": "checkbox",
+            "save_as": "boolean",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "gtag.js will check the URL for advertising parameters (gclid, dclid, gclsrc, _gl), and adds them to all internal link URLs the user might be clicking through.",
+            "name": "url_passthrough",
+            "disabled": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "consentModeWaitForUpdate",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_integer",
+            "pre_selected_value": "0",
+            "helpertext": "With beautiful cookie banner integration you usally can leave it a 0ms, for more infos see <a target='_blank' href='https://developers.google.com/tag-platform/security/guides/consent?hl=en#tracking_consent_state'>google's documentation</a>.",
+            "name": "wait_for_update in ms",
+            "disabled": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "microsoftClarityEnabled",
+            "type": "checkbox",
+            "save_as": "boolean",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Get premium add-on to enable. When checked you can select the the categories for which you want to set the consent for Microsoft Clarity. If nothing is checked, the consent will be set to 'false'.",
+            "name": "Enable Claritiy Cookie Consent API",
+            "disabled": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "microsoftClarityAllowedCats",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "Clarity cookies (window.clarity('consent')) will be enabled, if the user opts in to one of the selected categories.",
+            "name": "Microsoft Clarity allowed for",
+            "disabled": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "wpConsentApiStatistics",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "Cookies or any other form of local storage that are used exclusively for statistical purposes (Analytics Cookies). More <a target='_blank' href='https://github.com/wordpress/wp-consent-level-api?tab=readme-ov-file'>info</a>",
+            "name": "Statistics",
+            "disabled": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "wpConsentApiStatisticsAnonymous",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "Cookies or any other form of local storage that are used exclusively for anonymous statistical purposes (Anonymous Analytics Cookies), that are placed on a first party domain, and that do not allow identification of particular individuals. More <a target='_blank' href='https://github.com/wordpress/wp-consent-level-api?tab=readme-ov-file'>info</a>",
+            "name": "Statistics Anonymous",
+            "disabled": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "wpConsentApiMarketing",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "Cookies or any other form of local storage required to create user profiles to send advertising or to track the user on a website or across websites for similar marketing purposes. More <a target='_blank' href='https://github.com/wordpress/wp-consent-level-api?tab=readme-ov-file'>info</a>",
+            "name": "Marketing",
+            "disabled": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "wpConsentApiFunctional",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "The cookie or any other form of local storage is used for the sole purpose of carrying out the transmission of a communication over an electronic communications network; OR The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user. If cookies are disabled, the requested functionality will not be available. This makes them essential functional cookies. More <a target='_blank' href='https://github.com/wordpress/wp-consent-level-api?tab=readme-ov-file'>info</a>",
+            "name": "Functional",
+            "disabled": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "wpConsentApiPreferences",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "Cookies or any other form of local storage that can not be seen as statistics, statistics-anonymous, marketing or functional, and where the technical storage or access is necessary for the legitimate purpose of storing preferences. More <a target='_blank' href='https://github.com/wordpress/wp-consent-level-api?tab=readme-ov-file'>info</a>",
+            "name": "Preferences",
+            "disabled": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "pixelManagerWooStatistics",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "For more infos see: <a target='_blank' href='https://sweetcode.com/docs/wpm/consent-management/api'>Pixel Manager for Woo</a>",
+            "name": "Statistics",
+            "disabled": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "pixelManagerWooMarketing",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "For more infos see: <a target='_blank' href='https://sweetcode.com/docs/wpm/consent-management/api'>Pixel Manager for Woo</a>",
+            "name": "Marketing",
+            "disabled": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "pixelManagerWooPreferences",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "For more infos see: <a target='_blank' href='https://sweetcode.com/docs/wpm/consent-management/api'>Pixel Manager for Woo</a>",
+            "name": "Preferences",
+            "disabled": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "pixelManagerWooNecessary",
+            "type": "multiselect",
+            "save_as": "array",
+            "required": false,
+            "selectable_values": [],
+            "glue": " or ",
+            "no_selection_text": "Never",
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "For more infos see: <a target='_blank' href='https://sweetcode.com/docs/wpm/consent-management/api'>Pixel Manager for Woo</a>",
+            "name": "Necessary",
+            "disabled": false,
+            "save_in_db": false
+          }
+        ]
+      },
+      {
+        "tabname": "Cookie Settings Tab",
+        "tab_description": "",
+        "tab_tipps": "tab_revoke_description.html",
+        "tab_slug": "revoke_settings_tab",
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "revokable",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": true,
+            "helpertext": "Show tab at the bottom to give users the possibilty to change cookie settings.",
+            "name": "Show 'Cookie Settings' tab",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeAnimate",
+            "type": "checkbox",
+            "save_as": "boolean",
+            "required": false,
+            "disabled": true,
+            "extra_validation_name": false,
+            "pre_selected_value": true,
+            "helpertext": "Always show the `Cookie Settings Tab`, if unchecked it won't fade away. To enable this feature get the premium add-on from <a target='_blank' href='https://beautiful-cookie-banner.com/'>beautiful-cookie-banner.com</a> and support the development of this plugin.",
+            "name": "Cookie Settings fade in",
+            "newBanner": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "positionRevokeButton",
+            "type": "select",
+            "save_as": "string",
+            "required": false,
+            "selectable_values": [
+              { "value": "bottom-left", "name": "Float bottom left" },
+              { "value": "bottom-right", "name": "Float bottom right" },
+              { "value": "top-left", "name": "Float top left" },
+              { "value": "top-right", "name": "Float top  right" }
+            ],
+            "extra_validation_name": false,
+            "pre_selected_value": "bottom-right",
+            "helpertext": "",
+            "name": "Position 'Cookie Settings' tab",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeButtonType",
+            "type": "select",
+            "save_as": "string",
+            "required": false,
+            "disabled": true,
+            "selectable_values": [
+              { "value": "textOnly", "name": "Text only" },
+              {
+                "value": "svgIcon",
+                "name": "any SVG Icon"
+              }
+            ],
+            "extra_validation_name": false,
+            "pre_selected_value": "textOnly",
+            "helpertext": "Instead of text you can use any kind of SVG for the cookie settings tab. For more info see: <a target='_blank' href='https://beautiful-cookie-banner.com/documentation/cookie-consent-premium-add-on-documentation/how-to-use-an-icon-instead-of-tab-for-cookie-settings/'>beautiful-cookie-banner.com</a>. Please get the premium version to enable this feature.",
+            "name": "'Cookie Settings' tab style",
+            "save_in_db": false
+          },
+
+          {
+            "field_slug": "revokeButtonDValue",
+            "type": "extralongtext",
+            "save_as": "string",
+            "required": false,
+            "disabled": true,
+            "extra_validation_name": "nsc_bar_text_only",
+            "pre_selected_value": "M14.5 10C13.67 10 13 9.33 13 8.5V8H12.5C11.67 8 11 7.33 11 6.5V5.07C7.91 5.5 5.47 8 5.07 11.08C5.25 10.46 5.82 10 6.5 10C7.33 10 8 10.67 8 11.5S7.33 13 6.5 13C5.71 13 5.07 12.39 5 11.62C5 12.11 5 12.61 5.09 13.12C5.5 15.81 7.54 18.04 10.16 18.74C9.76 18.47 9.5 18 9.5 17.5C9.5 16.67 10.17 16 11 16C11.59 16 12.1 16.35 12.34 16.84C12.16 17.39 12.06 17.97 12 18.57C11.83 18.76 11.6 18.9 11.32 18.96C11.55 19 11.78 19 12 19V19C12 19.69 12.11 20.36 12.29 21C12.19 21 12.1 21 12 21C7.03 21 3 16.97 3 12S7.03 3 12 3C12 3 13 3 13 4V6H14C14 6 15 6 15 7V8H17C17 8 18 8 18 9V10H20C20 10 20.6 10 20.87 10.5C20.96 11 21 11.5 21 12C21 12.1 21 12.19 21 12.29C20.36 12.11 19.69 12 19 12H17.5C16.67 12 16 11.33 16 10.5V10H14.5M11.5 11C10.67 11 10 11.67 10 12.5S10.67 14 11.5 14 13 13.33 13 12.5 12.33 11 11.5 11M11 7.5C11 6.67 10.33 6 9.5 6S8 6.67 8 7.5 8.67 9 9.5 9 11 8.33 11 7.5M23.8 20.4C23.9 20.4 23.9 20.5 23.8 20.6L22.8 22.3C22.7 22.4 22.6 22.4 22.5 22.4L21.3 22C21 22.2 20.8 22.3 20.5 22.5L20.3 23.8C20.3 23.9 20.2 24 20.1 24H18.1C18 24 17.9 23.9 17.8 23.8L17.6 22.5C17.3 22.4 17 22.2 16.8 22L15.6 22.5C15.5 22.5 15.4 22.5 15.3 22.4L14.3 20.7C14.2 20.6 14.3 20.5 14.4 20.4L15.5 19.6V18.6L14.4 17.8C14.3 17.7 14.3 17.6 14.3 17.5L15.3 15.8C15.4 15.7 15.5 15.7 15.6 15.7L16.8 16.2C17.1 16 17.3 15.9 17.6 15.7L17.8 14.4C17.8 14.3 17.9 14.2 18.1 14.2H20.1C20.2 14.2 20.3 14.3 20.3 14.4L20.5 15.7C20.8 15.8 21.1 16 21.4 16.2L22.6 15.7C22.7 15.7 22.9 15.7 22.9 15.8L23.9 17.5C24 17.6 23.9 17.7 23.8 17.8L22.7 18.6V19.6L23.8 20.4M20.5 19C20.5 18.2 19.8 17.5 19 17.5S17.5 18.2 17.5 19 18.2 20.5 19 20.5 20.5 19.8 20.5 19Z",
+            "helpertext": "Please add here the d-value of the SVG. For more help see:",
+            "name": "Icon SVG d-value",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeTextColor",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "disabled": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#000000",
+            "newBanner": true,
+            "helpertext": "You can add hex #fff or rgba(100,100,100,0.9) colors here. Default: #000000",
+            "name": "Text Color",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeButtonColor",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "disabled": true,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#009868",
+            "helpertext": "You can add hex #fff or rgba(100,100,100,0.9) colors here. Default: #009868",
+            "name": "Color of SVG icon",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeButtonSize",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "disabled": true,
+            "extra_validation_name": "nsc_bar_text_only",
+            "pre_selected_value": "2em",
+            "helpertext": "Adjust the size of the SVG Icon, example value: 2em",
+            "name": "Height of SVG icon",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeRemoveBackground",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Remove the background of the button. Can be nice with SVG icons.",
+            "name": "Remove Background of Button",
+            "translatable": false,
+            "disabled": false,
+            "newBanner": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeBackgroundColor",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "disabled": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#ffffff",
+            "newBanner": true,
+            "helpertext": "You can add hex #fff or rgba(100,100,100,0.9) colors here. Default: #ffffff.",
+            "name": "Background Color",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeButtonBlur",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "disabled": false,
+            "extra_validation_name": "nsc_bar_text_number_only",
+            "pre_selected_value": "15px",
+            "helpertext": "To blur the background of the button, please add here the blur in px. Uses backdrop-filter. Make sure, that `Background Color` has enough transparency, e.g. rgba(100,100,100,0.5), otherwise it won't work. To remove the blur set it to 0px.",
+            "name": "Background Blur Effect",
+            "newBanner": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "revokeBorderRadius",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "disabled": false,
+            "extra_validation_name": "nsc_bar_text_number_only",
+            "pre_selected_value": "4px",
+            "helpertext": "Add here the border radius for the floating button, e.g. 4px",
+            "name": "Border Radius of Button",
+            "newBanner": true,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "content_policy",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Cookie Settings",
+            "helpertext": "Text of the small tab at the botton, once user had made a cookie choice.",
+            "name": "Text for 'Cookie Settings' tab",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "shortcode_link_show_banner_text",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Manage cookie settings",
+            "helpertext": "Text for link for showing the banner again. Nice to give user ability to manage their settings without displaying the 'Cookie Settings' tab. To display the link use this shortcode: [cc_show_cookie_banner_nsc_bar]",
+            "name": "Shortcode: Link text 'show banner'",
+            "save_in_db": true,
+            "newBanner": false
+          }
+        ]
+      },
+      {
+        "tabname": "Block Services",
+        "tab_description": "tab_block_services_no_license.html",
+        "tab_tipps": "",
+        "tab_slug": "block_services",
+        "internal_tabs": [
+          {
+            "id": "blockingRulesTab",
+            "name": "Blocking Rules",
+            "fields": [
+              "activate_service_blocking",
+              "blocked_services",
+              "custom_services",
+              "enqueueBlockingScripts",
+              "blockedScriptsDynamicApiCall"
+            ]
+          },
+          {
+            "id": "placeholderConfigTab",
+            "name": "Placeholder Configuration",
+            "fields": [
+              "block-placeholder-primary-color",
+              "block-placeholder-background-color",
+              "block-placeholder-text-color",
+              "block-placeholder-button-text-color",
+              "block-placeholder-container-bg-color",
+              "block-placeholder-border-color",
+              "block-placeholder-font-family",
+              "block-placeholder-headline-text",
+              "block-placeholder-body-text",
+              "block-placeholder-button-text",
+              "block-placeholder-button-border-radius",
+              "block-placeholder-container-border-radius",
+              "customplaceholdertemplate"
+            ]
+          }
+        ],
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "activate_service_blocking",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "To enable this feature get the premium add-on from <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a> and support the development of this plugin.",
+            "name": "Enable Service Blocking (beta)",
+            "save_in_db": true
+          },
+          {
+            "field_slug": "blocked_services",
+            "type": "hidden",
+            "save_as": "array",
+            "required": true,
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "[]",
+            "helpertext": "",
+            "name": "Blocked Services",
+            "save_in_db": true
+          },
+          {
+            "field_slug": "custom_services",
+            "type": "hidden",
+            "save_as": "array",
+            "required": true,
+            "extra_validation_name": "",
+            "pre_selected_value": "{}",
+            "helpertext": "",
+            "name": "",
+            "save_in_db": true
+          },
+          {
+            "field_slug": "customplaceholdertemplate",
+            "type": "showtext",
+            "save_as": "display_only",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "Need more customization options? You can create your own custom placeholder template. Find out how <a target='_blank' href='https://beautiful-cookie-banner.com/documentation-premium-add-on/block-placeholder-custom-template/'>here</a>.",
+            "helpertext": "",
+            "name": "All Settings",
+            "save_in_db": "skip"
+          },
+          {
+            "field_slug": "block-placeholder-headline-text",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "This Content is Blocked",
+            "helpertext": "",
+            "name": "Headline Text",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-body-text",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "Due to your current cookie choices, this content is being blocked. To view this content, please grant the necessary cookie consent.",
+            "helpertext": "",
+            "name": "Body Text",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-button-text",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_valid_json_string",
+            "pre_selected_value": "Adjust Consent Settings",
+            "helpertext": "",
+            "name": "Button Text",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-primary-color",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#676363",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Icon and Button Color",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-background-color",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#f9f9f9",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Background Color",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-text-color",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#333",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Text Color",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-button-text-color",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#ffffff",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Button Text Color",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-container-bg-color",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#ffffff",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Container Background Color",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-border-color",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_check_input_color_code",
+            "pre_selected_value": "#e0e0e0",
+            "helpertext": "You can add hex #fff or rgba rgba(100,100,100,0.9) colors here.",
+            "name": "Border Color",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-font-family",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_replace_doublequote_with_single",
+            "pre_selected_value": "system-ui, sans-serif;",
+            "helpertext": "Add you desired Fonts name here, e.g. 'Catamaran-Regular', sans-serif. Please be aware that these fonts should be loaded already. You can only use already existing fonts here. It won't install them.",
+            "name": "Font family",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-button-border-radius",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_text_number_only",
+            "pre_selected_value": "8px",
+            "helpertext": "Adjust the border radius of the CTA Button in the placeholder.",
+            "name": "Border Radius Button",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "block-placeholder-container-border-radius",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": "nsc_bar_text_number_only",
+            "pre_selected_value": "12px",
+            "helpertext": "Adjust the border radius of the container in the placeholder.",
+            "name": "Border Radius Container",
+            "disabled": true,
+            "auto_load": false,
+            "save_in_db": true
+          }
+        ]
+      },
+      {
+        "tabname": "Cookie Settings",
+        "tab_description": "",
+        "tab_tipps": "",
+        "tab_slug": "cookie_settings",
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "cookie_name",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "cookieconsent_status",
+            "helpertext": "<strong>Be careful:</strong> changing the name will cause the banner to show up for all users again. The settings get 'resetted'.",
+            "name": "Cookie Name",
+            "newBanner": false,
+            "save_in_db": false
+          },
+          {
+            "field_slug": "cookie_name_nb",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "bcbconsent",
+            "helpertext": "<strong>Be careful:</strong> changing the name will cause the banner to show up for all users again. The settings get 'resetted'.",
+            "name": "Cookie Name",
+            "newBanner": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "cookie_domain",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "",
+            "helpertext": "You can leave it empty. If you do so, the current domain where the banner is clicked is used as cookie domain. <strong>Be careful:</strong> if changing the domain all users will see the banner again, because their cookie gets 'resetted'.",
+            "name": "Cookie Domain",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "cookie_expiryDays",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": 365,
+            "helpertext": "in Days",
+            "name": "Cookie Expiry",
+            "save_in_db": false
+          }
+        ]
+      },
+      {
+        "tabname": "Im & Export",
+        "tab_description": "tab_jsonconfig_description.html",
+        "tab_tipps": "tab_jsonconfig_tipps.html",
+        "tab_slug": "advanced_config",
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "bannersettings_json",
+            "type": "textarea",
+            "save_as": "string",
+            "required": true,
+            "extra_validation_name": "nsc_bar_check_input_export_json_string",
+            "pre_selected_value": "",
+            "helpertext": "For more a detailed documentation how to strutcture the json please visit: https://cookieconsent.osano.com/download/",
+            "name": "JSON Config",
+            "newBanner": false,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "enable_public_api",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "If you want to use the API for updating your banner settings. Learn more about the <a target='_blank' href='https://beautiful-cookie-banner.com/documentation-premium-add-on/api-documentation/settings-api/'>setting API</a>",
+            "name": "Enable Settings API",
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "all_settings",
+            "type": "textarea",
+            "save_as": "display_only",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "",
+            "helpertext": "With installed <a target='_blank' href='https://beautiful-cookie-banner.com/'>premium add-on</a> you find all your banner settings in this field. Helpful for a quick export. For updating these settings you can use the API.",
+            "name": "All Settings",
+            "save_in_db": "skip"
+          }
+        ]
+      },
+      {
+        "tabname": "Statistics",
+        "tab_description": "<div class='nsc_bar_notice_premium_addon_hint py-4 px-3 mt-2'>You can save statistic locally in a logfile or send them to GA4. To activate please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>beautiful-cookie-banner.com</a>.</div>",
+        "tab_tipps": "",
+        "tab_slug": "statistics",
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "activate_stats",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Activate stats module. Please make sure that the parent plugin is at least version 2.7.1. and the wordpress api is available for unauthenticated users and POST requests.",
+            "name": "Activate statistics",
+            "translatable": false,
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "store_consents_log",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "Stores consents in a local folder as ndjson file, WITH user ip adresses. Only works if 'Activate statistics' is enabled and wordpress has access to the filesystem. Logs will be stored in wp-content/nsc-bara-beautiful-cookie-banner-addon-files/consent-logs/YEAR/MONTH. The folder is protected by .htaccess file and file permissions are set to 640. NGINX does not support .htaccess files! If you are running on NGINX, make sure you add the rules in your vhost configuration file.",
+            "name": "Log consents with IP locally",
+            "translatable": false,
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "ga_measurement_id_stats",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "",
+            "helpertext": "Measurement Id for Google Analytics. IMPORTANT: create a dedicated property for this reporting, otherwise it will mess up your existing metrics. The statistics will be saved in Google Analytics. NO personal user data will be sent to GA. Only this data is sent to GA: consent settings, referrer, page path of clicking the banner. Not send are for example: IP, user agent, clientId of any kind or similiar.",
+            "name": "Measurement Id",
+            "translatable": false,
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "ga_api_secret_stats",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "",
+            "helpertext": "The Measurement Protocol API secret for GA4",
+            "name": "API Secret",
+            "translatable": false,
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "enable_open_counter",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "By enabling you will get statistics how often the banner was opened before the user has interacted with it. For that a localStorage entry on the users device is needed. Entry key: 'beautiful_cookie_banner_open_counter'",
+            "name": "Banner open counter",
+            "translatable": false,
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "send_open_event",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": false,
+            "helpertext": "By enabling an event is sent everytime the banner opens. Be careful, this might add significant load to your server, as for every pageview an additional hit is sent to your server.",
+            "name": "Send open event",
+            "translatable": false,
+            "disabled": true,
+            "save_in_db": true
+          }
+        ]
+      },
+      {
+        "tabname": "Google Tag Manager",
+        "tab_description": "<p>Using the free <a target='_blank' href='https://support.google.com/tagmanager/answer/6102821?hl=en'>Google Tag Manager</a> (GTM) to manage all your tracking codes has a lot of <a target='_blank' href='https://marketingplatform.google.com/intl/en/about/tag-manager/features/'>benefits</a>. It makes it easy to manage all your tracking codes and to activate/deactivate them.<br><br>The free version of this plugin supports the GTM by pushing the consent status to the dataLayer. With the premium add-on this plugin manages the injecting of the GTM on the page. When using 'blocking services', this plugin takes care of loading the GTM and when not to load it. All this <strong>without the need of a reload</strong> of the page after the user consented. And in some cases it will fix challenges with caching plugins.<br>You get the premium add-on here: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.<br><br><hr></p>",
+        "tab_tipps": "",
+        "tab_slug": "gtm",
+        "active": false,
+        "tabfields": [
+          {
+            "field_slug": "gtm_id",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "",
+            "helpertext": "Example: GTM-XXXXXXX. To deactivate leave empty. If this is filled, this plugin will inject the GTM container into the page. This has some advantages: this plugin will make sure, that the timing of the GTM container is correct. And when blocking services are enabled, this plugin manages the loading of the GTM container and loads it after consent without a reload. See <a target='_blank' href='https://beautiful-cookie-banner.com/documentation/cookie-consent-premium-add-on-documentation/google-tag-manager-install-the-container/'>documentation</a>. To activate please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "GTM ID",
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "dataLayerName",
+            "type": "text",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "dataLayer",
+            "helpertext": "In most cases it is not necessary to change this. If you are using a custom dataLayer, you can change the name here.",
+            "name": "DataLayer name",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "onStatusChange",
+            "type": "checkbox",
+            "save_as": "string",
+            "required": false,
+            "pre_selected_value": false,
+            "extra_validation_name": false,
+            "helpertext": "If checked, the events 'beautiful_cookie_consent_initialized' and 'beautiful_cookie_consent_updated' will pushed in your dataLayer after consent or a change of consent. See documentation how to use them.",
+            "name": "Push consent event to dataLayer",
+            "save_in_db": false
+          },
+          {
+            "field_slug": "tagmanagerHostname",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "www.googletagmanager.com",
+            "helpertext": "In most cases it is not necessary to change this. If you are using a proxy for the GTM, like the server side tag manger for example, you can change the URL here. To activate please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "Domain for Google Tag Manager",
+            "disabled": true,
+            "save_in_db": true
+          },
+          {
+            "field_slug": "tagmanagerUrl",
+            "type": "longtext",
+            "save_as": "string",
+            "required": false,
+            "extra_validation_name": false,
+            "pre_selected_value": "",
+            "helpertext": "<strong>ADVANCED.</strong> You can completly change the URL of the GTM container here, including all Parameters. The standard example would be: https://www.googletagmanager.com/gtm.js?id=GTM-XXXXXX. BE AWARE, if you have a custom dataLayer name you have to add that to the URL as well. Useful if you want to use another tag manager as well. To activate please get the premium add-on: <a target='_blank' href='https://beautiful-cookie-banner.com/'>https://beautiful-cookie-banner.com/</a>.",
+            "name": "URL for Tag Manager",
+            "disabled": true,
+            "save_in_db": true
+          }
+        ]
+      }
+    ]
+  }
+}

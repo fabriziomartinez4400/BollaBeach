@@ -1,0 +1,82 @@
+.wcusage-user-actions {
+    text-align: center;
+}
+
+.wcusage-user-actions a {
+    margin-bottom: 2px;
+}
+
+.wcusage-delete-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.wrap.wcusage-affiliate-view-page .wcusage-delete-dropdown {
+    margin-top: -5px;
+    margin-left: 5px;
+}
+
+.wcusage-delete-btn {
+    background: #dc3232;
+    border: 1px solid #dc3232;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.wcusage-delete-btn:hover {
+    background: #c92c2c;
+    border-color: #c92c2c;
+}
+
+.wcusage-delete-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.wcusage-delete-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 180px;
+    margin-top: 2px;
+}
+
+.wcusage-delete-menu a {
+    display: block;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.wcusage-delete-menu a:hover {
+    background: #f8f8f8;
+}
+
+.wcusage-delete-menu a:last-child {
+    border-bottom: none;
+}
+
+.wcusage-delete-menu a:first-child:hover {
+    background: #ffeaea;
+    color: #dc3232;
+}
+
+.wcusage-delete-menu a.processing {
+    opacity: 0.6;
+    pointer-events: none;
+    background: #f0f0f0;
+}

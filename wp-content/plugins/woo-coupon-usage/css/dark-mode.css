@@ -1,0 +1,736 @@
+/**
+ * Dark Mode Styles for Affiliate Dashboard
+ * Applied when .wcu-dark-mode class is present on the dashboard container
+ * All styles are scoped to .wcu-dash-coupon-area.wcu-dark-mode to prevent affecting theme elements
+ */
+
+/* === Main Background & Container === */
+.wcu-dash-coupon-area.wcu-dark-mode {
+    background: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+/* === Theme Content Wrapper === */
+/* Only darken .entry-content if it contains the dark mode dashboard */
+.entry-content:has(.wcu-dash-coupon-area.wcu-dark-mode) {
+    background: #1a1a1a !important;
+}
+
+/* === Typography === */
+.wcu-dash-coupon-area.wcu-dark-mode h1,
+.wcu-dash-coupon-area.wcu-dark-mode h2,
+.wcu-dash-coupon-area.wcu-dark-mode h3,
+.wcu-dash-coupon-area.wcu-dark-mode h4,
+.wcu-dash-coupon-area.wcu-dark-mode h5,
+.wcu-dash-coupon-area.wcu-dark-mode h6 {
+    color: #f0f0f0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode p,
+.wcu-dash-coupon-area.wcu-dark-mode span,
+.wcu-dash-coupon-area.wcu-dark-mode div {
+    color: #e0e0e0;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode a {
+    color: #64b5f6;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode a:hover {
+    color: #90caf9;
+}
+
+/* === Content Areas === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcutabcontent {
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcutabcontent strong {
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-field {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+/* === Statistics Boxes === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-stats-box,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-field-section {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-stats-box h3,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-field-section h3 {
+    color: #f0f0f0 !important;
+}
+
+/* === Tables === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTable {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableRow,
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableRowDropdown {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableRow:hover,
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableRowDropdown:hover {
+    background: #3d3d3d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableRow td,
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableRowDropdown td {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableHeading {
+    background: #1a1a1a !important;
+    color: #f0f0f0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableHeading th {
+    color: #f0f0f0 !important;
+    border-color: #404040 !important;
+}
+
+/* === Buttons === */
+.wcu-dash-coupon-area.wcu-dark-mode button,
+.wcu-dash-coupon-area.wcu-dark-mode .button,
+.wcu-dash-coupon-area.wcu-dark-mode input[type="button"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="submit"] {
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode button:hover,
+.wcu-dash-coupon-area.wcu-dark-mode .button:hover,
+.wcu-dash-coupon-area.wcu-dark-mode input[type="button"]:hover,
+.wcu-dash-coupon-area.wcu-dark-mode input[type="submit"]:hover {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+}
+
+/* === Forms & Inputs === */
+.wcu-dash-coupon-area.wcu-dark-mode input[type="text"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="date"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="month"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="number"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="email"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="password"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="search"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="url"],
+.wcu-dash-coupon-area.wcu-dark-mode input[type="tel"],
+.wcu-dash-coupon-area.wcu-dark-mode textarea,
+.wcu-dash-coupon-area.wcu-dark-mode select {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode input::placeholder,
+.wcu-dash-coupon-area.wcu-dark-mode textarea::placeholder {
+    color: #888888;
+}
+
+/* === Coupon Code Display === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-coupon-code,
+.wcu-dash-coupon-area.wcu-dark-mode code {
+    background: #2d2d2d !important;
+    color: #ffffff !important;
+    border-color: #404040 !important;
+}
+
+/* === Dashboard Header === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-dash-header {
+    background: #242424 !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-dash-logout {
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-dash-logout:hover {
+    color: #ffffff !important;
+}
+
+/* === Profile Section === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-profile-section {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+/* === Charts & Graphs === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-chart-container {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+/* === Alerts & Messages === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-alert,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-message {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-alert-success {
+    background: #1b5e20 !important;
+    border-color: #2e7d32 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-alert-warning {
+    background: #e65100 !important;
+    border-color: #ef6c00 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-alert-error {
+    background: #b71c1c !important;
+    border-color: #c62828 !important;
+}
+
+/* === Loading Spinner === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-loading,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-spinner {
+    border-color: #404040 !important;
+    border-top-color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-loading-loader {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-top-color: #5dade2 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-loading-loader-text {
+    color: #b0b0b0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-loading-loader-subtext {
+    color: #808080 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-loading-loader-subtext a {
+    color: #808080 !important;
+}
+
+/* === Separators === */
+.wcu-dash-coupon-area.wcu-dark-mode hr {
+    border-color: #404040 !important;
+}
+
+/* === Shadows & Borders === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-card,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-box {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* === Additional Stats/Info Boxes === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-info-box {
+    background: #1a1a1a !important;
+    border-left-color: #ffffff !important;
+}
+
+/* === Orders Table Specific === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcutabcontent .wcuTableRow td,
+.wcu-dash-coupon-area.wcu-dark-mode .wcutabcontent .wcuTableRow tr:nth-child(odd) td {
+    background: #2d2d2d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcutabcontent .wcuTableRowDropdown:nth-child(even) td {
+    background: #242424 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcutabcontent .wcuTableRowDropdown:nth-child(odd) td {
+    background: #2d2d2d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcutabcontent .wcuTableRowDropdown:hover td {
+    background: #3d3d3d !important;
+}
+
+/* === Toggle Dropdown Buttons === */
+.wcu-dash-coupon-area.wcu-dark-mode .dropdown-toggle-row,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-toggle-details {
+    color: #ffffff !important;
+}
+
+/* === Settings Tab === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-settings-tabs {
+    background: #2d2d2d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-settings-tab-nav {
+    border-bottom-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-settings-tab-nav a {
+    color: #64b5f6 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-settings-tab-nav li.active a {
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-settings-tab-content {
+    background: #242424 !important;
+    border-color: #404040 !important;
+}
+
+/* === Pagination === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-pagination a,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-pagination span {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-pagination a:hover,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-pagination span.current {
+    color: #ffffff !important;
+}
+
+/* === Tooltip === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-tooltip {
+    color: #e0e0e0 !important;
+}
+
+/* === Badge === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-badge {
+    color: #ffffff !important;
+}
+
+/* === Info Boxes === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-info-box {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+    border-left-color: #111 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-info-box::before {
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-info-box h3,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-info-box h4 {
+    color: #f0f0f0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-info-box p,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-info-box span {
+    color: #e0e0e0 !important;
+}
+
+/* === Commission Graph === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-graph-container,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-chart-container,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-charts,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusagechart {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+    box-shadow: none !important;
+    padding: 0 5px;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-graph-title,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-chart-title {
+    color: #f0f0f0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode canvas {
+    background: #2d2d2d !important;
+}
+
+/* Chart.js specific styles */
+.wcu-dash-coupon-area.wcu-dark-mode .chartjs-render-monitor {
+    background: #2d2d2d !important;
+}
+
+/* Google Charts container */
+.wcu-dash-coupon-area.wcu-dark-mode #chart_divquarter,
+.wcu-dash-coupon-area.wcu-dark-mode #chart_divmonth,
+.wcu-dash-coupon-area.wcu-dark-mode #chart_divlastmonth,
+.wcu-dash-coupon-area.wcu-dark-mode #chart_divweek {
+    background: #2d2d2d !important;
+}
+
+/* SVG elements in charts */
+.wcu-dash-coupon-area.wcu-dark-mode svg {
+    background: #2d2d2d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode svg text {
+    fill: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode svg rect[fill="#ffffff"],
+.wcu-dash-coupon-area.wcu-dark-mode svg rect[fill="white"] {
+    fill: #2d2d2d !important;
+}
+
+/* Chart labels and legend text */
+.wcu-dash-coupon-area.wcu-dark-mode .wcusagechart text,
+.wcu-dash-coupon-area.wcu-dark-mode .google-visualization-tooltip text {
+    fill: #e0e0e0 !important;
+    color: #e0e0e0 !important;
+}
+
+/* === Table Headers === */
+.wcu-dash-coupon-area.wcu-dark-mode th,
+.wcu-dash-coupon-area.wcu-dark-mode thead,
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableHeading,
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableHeading th {
+    background-color: #1a1a1a !important;
+    color: #f0f0f0 !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableHead span,
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableFoot span {
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcuTableCell {
+    border-color: #404040 !important;
+}
+
+/* === Text & Date Fields === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-date-field,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-text-field,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-field {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-field-label,
+.wcu-dash-coupon-area.wcu-dark-mode label {
+    color: #e0e0e0 !important;
+}
+
+/* Date picker styles */
+.wcu-dash-coupon-area.wcu-dark-mode .ui-datepicker,
+.wcu-dash-coupon-area.wcu-dark-mode .ui-datepicker-header {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .ui-datepicker td {
+    background: #2d2d2d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .ui-datepicker td a {
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .ui-datepicker td a:hover {
+    color: #ffffff !important;
+}
+
+/* === Creatives Box === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-creatives-box,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-creatives-container,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-creatives-box h3,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-creatives-box h4,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box p {
+    color: #f0f0f0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-creative-item,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box-name,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box-description {
+    background: #242424 !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-creative-item:hover,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box:hover {
+    background: #3d3d3d !important;
+    border-color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-creative-title,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box-name {
+    color: #f0f0f0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-creative-description,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box-description,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box-last-updated {
+    color: #b0b0b0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-creative-image,
+.wcu-dash-coupon-area.wcu-dark-mode .creatives-box-image {
+    border-color: #404040 !important;
+    background: #2d2d2d !important;
+}
+
+/* === Payouts Box === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payouts-box,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-payouts-container,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payout-item,
+.wcu-dash-coupon-area.wcu-dark-mode .payouts-box {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payouts-box h3,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payouts-box h4,
+.wcu-dash-coupon-area.wcu-dark-mode .payouts-box h3,
+.wcu-dash-coupon-area.wcu-dark-mode .payouts-box h4,
+.wcu-dash-coupon-area.wcu-dark-mode .payouts-box p {
+    color: #f0f0f0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payouts-box strong,
+.wcu-dash-coupon-area.wcu-dark-mode .payouts-box strong {
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payout-status {
+    background: #1a1a1a !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payout-status.pending {
+    background: #e65100 !important;
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payout-status.completed {
+    background: #1b5e20 !important;
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payout-status.failed {
+    background: #b71c1c !important;
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payout-amount {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-payout-date {
+    color: #b0b0b0 !important;
+}
+
+/* === Payouts Table === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-payouts {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-payouts .wcuTableRow {
+    background: #2d2d2d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-payouts .wcuTableRow:hover {
+    background: #3d3d3d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-payouts .wcuTableCell {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-payouts .wcuTableHead {
+    background: #1a1a1a !important;
+    color: #f0f0f0 !important;
+    border-color: #404040 !important;
+}
+
+/* === Additional Field Styles === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-field-row {
+    border-bottom-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-field-header {
+    background: #1a1a1a !important;
+    color: #f0f0f0 !important;
+}
+
+/* === Statistics Numbers === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-number,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-stat-number,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-number {
+    color: #ffffff !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-number-label,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-stat-label {
+    color: #b0b0b0 !important;
+}
+
+/* === Legends & Labels === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-legend,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-legend {
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-legend-item {
+    border-color: #404040 !important;
+}
+
+/* === Filters & Dropdowns === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-filter,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-filter {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-filter option,
+.wcu-dash-coupon-area.wcu-dark-mode select option {
+    background: #2d2d2d !important;
+    color: #ffffff !important;
+}
+
+/* === Empty States === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-empty-state,
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-no-data {
+    color: #b0b0b0 !important;
+}
+
+/* === Progress Bars === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-progress-bar {
+    background: #1a1a1a !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-progress-bar-text {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-reward-summary-item {
+    color: #111 !important;
+}
+
+/* === Referral URL Box === */
+.wcu-dash-coupon-area.wcu-dark-mode .referral-url-box {
+    background: linear-gradient(#2d2d2d, #242424) !important;
+    color: #e0e0e0 !important;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5) !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .referral-url-box strong,
+.wcu-dash-coupon-area.wcu-dark-mode .referral-url-box p {
+    color: #e0e0e0 !important;
+}
+
+/* === Recent Clicks Table Header === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcusage-title-referral-clicks {
+    color: #f0f0f0 !important;
+}
+
+/* === Recent Clicks & Direct Link Tables === */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-clicks,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-directlinks {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-clicks .wcuTableRow,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-directlinks .wcuTableRow {
+    background: #2d2d2d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-clicks .wcuTableRow:hover,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-directlinks .wcuTableRow:hover {
+    background: #3d3d3d !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-clicks .wcuTableCell,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-directlinks .wcuTableCell {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-clicks .wcuTableHead,
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-table-directlinks .wcuTableHead {
+    background: #1a1a1a !important;
+    color: #f0f0f0 !important;
+    border-color: #404040 !important;
+}
+
+/* === Dark Mode Toggle Button Styles === */
+.wcu-dark-mode-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 24px;
+    margin: 0 0 0 20px;
+    color: #666;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-dark-mode-toggle {
+    background: transparent !important;
+    color: #e0e0e0 !important;
+}
+
+.wcu-dark-mode-toggle:hover {
+    background: transparent !important;
+    color: #dae4e4 !important;
+    transform: scale(1.1);
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-dark-mode-toggle:hover {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+.wcu-dark-mode-toggle i {
+    transition: transform 0.3s ease;
+}
+
+/* Icon animation */
+.wcu-dash-coupon-area.wcu-dark-mode .wcu-dark-mode-toggle i {
+    transform: rotate(180deg);
+}
+
+/* === Address Information & Bank Details Boxes === */
+/* Override inline styles for light-colored boxes */
+.wcu-dash-coupon-area.wcu-dark-mode div[style*="background-color: #f9f9f9"] {
+    background-color: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode h4[style*="color: #333"] {
+    color: #f0f0f0 !important;
+}
+
+.wcu-dash-coupon-area.wcu-dark-mode small[style*="color: #666"] {
+    color: #b0b0b0 !important;
+}

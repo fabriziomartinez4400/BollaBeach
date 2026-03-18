@@ -1,0 +1,40 @@
+{
+  "content": {
+    "deny": "Deny",
+    "dismiss": "Got it",
+    "allow": "Allow",
+    "link": "Learn more",
+    "href": "http://yourdomain/dataprivacy",
+    "message": "This website uses cookies to ensure you get the best experience on our website.",
+    "policy": "Cookie Settings"
+  },
+  "type": "info",
+  "palette": {
+    "popup": {
+      "background": "#937afc",
+      "text": "#fff"
+    },
+    "button": {
+      "background": "#fff",
+      "text": "#937afc",
+      "border": ""
+    }
+  },
+  "position": "bottom-right",
+  "theme": "block",
+  "cookietypes": [
+    {
+      "label": "Technical",
+      "checked": "checked",
+      "disabled": "disabled",
+      "cookie_suffix": "tech"
+    },
+    {
+      "label": "Marketing",
+      "checked": "",
+      "disabled": "",
+      "cookie_suffix": "marketing"
+    }
+  ],
+  "revokable": true
+}

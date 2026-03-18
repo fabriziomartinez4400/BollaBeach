@@ -1,0 +1,1859 @@
+/* Floating Widget Styles */
+.wcusage-floating-widget {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Default button color values */
+    --wcusage-button-bg-color: #1b3e47;
+    --wcusage-button-text-color: #ffffff;
+    --wcusage-button-hover-color: #005d75;
+    --wcusage-button-border-color: #1b3e47;
+    
+    /* Default widget theme color */
+    --wcusage-widget-theme-color: #1b3e47;
+}
+
+/* Add Font Awesome support */
+.wcusage-floating-widget .fas,
+.wcusage-floating-widget .fa {
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro', 'FontAwesome';
+    font-weight: 900;
+    font-style: normal;
+}
+
+.wcusage-floating-button {
+    background: var(--wcusage-button-bg-color);
+    color: var(--wcusage-button-text-color);
+    border: 2px solid var(--wcusage-button-border-color);
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 4px #c6dde3;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wcusage-floating-button:hover,
+.wcusage-floating-button:active,
+.wcusage-floating-button:focus {
+    transform: translateY(-2px);
+    background: var(--wcusage-button-hover-color);
+    color: var(--wcusage-button-text-color);
+    border: 2px solid var(--wcusage-button-border-color);
+    box-shadow: 0 0 4px #bfd1d5;
+}
+
+/* Position styles */
+.wcusage-floating-widget.wcusage-position-bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+.wcusage-floating-widget.wcusage-position-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+.wcusage-floating-widget.wcusage-position-top-left {
+    top: 20px;
+    left: 20px;
+}
+.wcusage-floating-widget.wcusage-position-top-right {
+    top: 20px;
+    right: 20px;
+}
+
+/* Center positions - properly centered */
+.wcusage-floating-widget.wcusage-position-center-left {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    /* Make container fit the button size and center it */
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wcusage-floating-widget.wcusage-position-center-right {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    /* Make container fit the button size and center it */
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center the button within the widget container for vertical positions */
+.wcusage-floating-widget.wcusage-position-center-left .wcusage-floating-button,
+.wcusage-floating-widget.wcusage-position-center-right .wcusage-floating-button {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    flex-direction: row;
+    gap: 8px;
+    padding: 20px 12px;
+    min-height: 120px;
+    align-items: center;
+    justify-content: center;
+    /* Ensure button is centered within container */
+    margin: 0;
+    position: relative;
+}
+
+/* Vertical button styling for center positions */
+.wcusage-floating-widget.wcusage-position-center-left .wcusage-floating-button,
+.wcusage-floating-widget.wcusage-position-center-right .wcusage-floating-button {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    flex-direction: row;
+    gap: 8px;
+    padding: 20px 12px;
+    min-height: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjust icon for vertical layout */
+.wcusage-floating-widget.wcusage-position-center-left .wcusage-floating-icon,
+.wcusage-floating-widget.wcusage-position-center-right .wcusage-floating-icon {
+    writing-mode: horizontal-tb;
+    text-orientation: upright;
+    margin-bottom: 0;
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+/* Hover effects for vertical buttons */
+.wcusage-floating-widget.wcusage-position-center-left .wcusage-floating-button:hover,
+.wcusage-floating-widget.wcusage-position-center-left .wcusage-floating-button:active,
+.wcusage-floating-widget.wcusage-position-center-left .wcusage-floating-button:focus {
+    transform: translateX(-2px);
+}
+
+.wcusage-floating-widget.wcusage-position-center-right .wcusage-floating-button:hover,
+.wcusage-floating-widget.wcusage-position-center-right .wcusage-floating-button:active,
+.wcusage-floating-widget.wcusage-position-center-right .wcusage-floating-button:focus {
+    transform: translateX(2px);
+}
+
+/* Button size styles for vertical buttons */
+.wcusage-floating-widget.wcusage-position-center-left.wcusage-size-small .wcusage-floating-button,
+.wcusage-floating-widget.wcusage-position-center-right.wcusage-size-small .wcusage-floating-button {
+    padding: 16px 8px;
+    font-size: 12px;
+}
+
+.wcusage-floating-widget.wcusage-position-center-left.wcusage-size-medium .wcusage-floating-button,
+.wcusage-floating-widget.wcusage-position-center-right.wcusage-size-medium .wcusage-floating-button {
+    padding: 20px 12px;
+    font-size: 14px;
+}
+
+.wcusage-size-large .wcusage-floating-button {
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.wcusage-size-medium .wcusage-floating-button {
+    padding: 10px 14px;
+    font-size: 16px;
+}
+
+.wcusage-size-small .wcusage-floating-button {
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+
+/* Floating Widget Icon Styles */
+.wcusage-floating-icon {
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+    color: var(--wcusage-button-text-color);
+}
+
+.wcusage-floating-popup {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 440px;
+    max-width: 90vw;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000000;
+    overflow: hidden;
+}
+
+/* Popup positioning adjustments for center positions */
+.wcusage-floating-widget.wcusage-position-center-left .wcusage-floating-popup {
+    position: fixed;
+    top: calc(50% + 30px);
+    left: calc(10px + 60px + 10px); /* left margin + estimated button width + gap */
+    bottom: auto;
+    transform: translateY(-50%);
+    margin-left: 0;
+}
+
+.wcusage-floating-widget.wcusage-position-center-right .wcusage-floating-popup {
+    position: fixed;
+    top: calc(50% + 30px);
+    right: calc(10px + 60px + 10px); /* right margin + estimated button width + gap */
+    left: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    margin-right: 0;
+}
+
+/* Responsive adjustments for different button sizes */
+.wcusage-floating-widget.wcusage-position-center-left.wcusage-size-large .wcusage-floating-popup {
+    left: calc(10px + 70px + 10px); /* adjust for larger button */
+}
+
+.wcusage-floating-widget.wcusage-position-center-right.wcusage-size-large .wcusage-floating-popup {
+    right: calc(10px + 70px + 10px); /* adjust for larger button */
+}
+
+.wcusage-floating-widget.wcusage-position-center-left.wcusage-size-small .wcusage-floating-popup {
+    left: calc(10px + 50px + 10px); /* adjust for smaller button */
+}
+
+.wcusage-floating-widget.wcusage-position-center-right.wcusage-size-small .wcusage-floating-popup {
+    right: calc(10px + 50px + 10px); /* adjust for smaller button */
+}
+
+.wcusage-popup-header {
+    background: var(--wcusage-widget-theme-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wcusage-popup-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.wcusage-popup-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wcusage-popup-content {
+    padding: 0;
+    max-height: 450px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.wcusage-popup-loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+/* Tab Styles */
+.wcusage-widget-tabs {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.wcusage-widget-tab {
+    flex: 1;
+    padding: 12px 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: #6c757d;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.wcusage-widget-tab:hover {
+    color: #495057;
+    background: #e9ecef;
+}
+
+.wcusage-widget-tab.active {
+    color: var(--wcusage-widget-theme-color);
+    border-bottom-color: var(--wcusage-widget-theme-color);
+    background: white;
+}
+
+.wcusage-widget-tab-container {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.wcusage-widget-tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.wcusage-widget-tab-content.active {
+    display: block;
+}
+
+/* Custom Tab Text Styles */
+.wcusage-widget-tab-custom-text {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.wcusage-widget-tab-custom-text p {
+    margin-top: 0;
+    font-size: 14px;
+    color: #495057;
+}
+
+/* Statistics Grid */
+.wcusage-widget-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Links tab specific grid - 3 columns on one line */
+#tab-links .wcusage-widget-stats-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+.wcusage-widget-stat-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.wcusage-widget-stat-box:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wcusage-widget-stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--wcusage-widget-theme-color);
+    display: block;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.wcusage-widget-stat-label {
+    font-size: 11px;
+    color: #6c757d;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wcusage-widget-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.wcusage-widget-stat:last-child {
+    border-bottom: none;
+}
+
+.wcusage-widget-coupon-select {
+    margin-bottom: 15px;
+}
+
+.wcusage-widget-coupon-select select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.wcusage-widget-actions {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 12px 20px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    flex-shrink: 0;
+}
+
+.wcusage-widget-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.wcusage-widget-btn-primary {
+    background: var(--wcusage-widget-theme-color);
+    color: white;
+    border: 1px solid var(--wcusage-widget-theme-color);
+}
+
+.wcusage-widget-btn-primary:hover,
+.wcusage-widget-btn-primary:active,
+.wcusage-widget-btn-primary:focus {
+    background: var(--wcusage-widget-theme-color);
+    color: white;
+    border-color: var(--wcusage-widget-theme-color);
+    opacity: 0.8;
+}
+
+.wcusage-widget-btn-secondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.wcusage-widget-btn-secondary:hover {
+    background: #e9ecef;
+    color: #495057;
+    border-color: #adb5bd;
+    transform: translateY(-1px);
+}
+
+.wcusage-widget-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+    text-decoration: none;
+    color: inherit;
+}
+
+.wcusage-widget-btn-primary:hover {
+    color: white;
+}
+
+.wcusage-widget-btn-secondary:hover {
+    color: #495057;
+}
+
+/* Button message states */
+.wcusage-widget-btn-success {
+    background: #28a745 !important;
+    color: white !important;
+    border-color: #28a745 !important;
+}
+
+.wcusage-widget-btn-error {
+    background: #dc3545 !important;
+    color: white !important;
+    border-color: #dc3545 !important;
+}
+
+.wcusage-widget-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+    transform: none !important;
+}
+
+.wcusage-widget-btn:disabled:hover {
+    transform: none !important;
+}
+
+.wcusage-widget-login-form {
+    text-align: center;
+    padding: 20px;
+}
+
+.wcusage-widget-login-form input {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.wcusage-widget-error {
+    background: #fee;
+    color: #c33;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.wcusage-widget-success {
+    background: #efe;
+    color: #3c3;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* URL Input */
+.wcusage-widget-url-input {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.wcusage-widget-url-input input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* URL Form Styles */
+.wcusage-widget-url-form {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wcusage-widget-url-form label {
+    width: auto;
+    font-size: 12px;
+    font-weight: 500;
+    color: #495057;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.wcusage-widget-url-form input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: monospace;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.wcusage-widget-url-form input:focus {
+    outline: none;
+    border-color: var(--wcusage-widget-theme-color);
+    box-shadow: 0 0 0 2px rgba(27, 62, 71, 0.2);
+}
+
+.wcusage-widget-url-display {
+    background: linear-gradient(135deg, rgba(67, 124, 138, 0.1) 0%, rgba(27, 62, 71, 0.2) 100%);
+    border: 1px solid rgba(27, 62, 71, 0.4);
+    border-radius: 6px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 14px;
+    word-break: break-all;
+    margin-bottom: 10px;
+}
+
+/* Add spacing below copy button in links tab */
+#tab-links .wcusage-widget-actions:first-of-type {
+    margin-bottom: 25px;
+}
+
+/* Referrals List Styles */
+.wcusage-widget-referrals-list {
+}
+
+/* Referrals List Item Styles */
+.wcusage-widget-referral-item {
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.wcusage-widget-referral-header {
+    background: #f8f9fa;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.wcusage-widget-order-id {
+    font-weight: 600;
+    color: #495057;
+}
+
+.wcusage-widget-order-date {
+    font-size: 11px;
+    color: #6c757d;
+}
+
+.wcusage-widget-referral-details {
+    padding: 12px;
+}
+
+.wcusage-widget-referral-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.wcusage-widget-referral-stat:last-child {
+    margin-bottom: 0;
+}
+
+.wcusage-widget-order-status {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.wcusage-widget-order-status.status-completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.wcusage-widget-order-status.status-processing {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.wcusage-widget-order-status.status-pending {
+    background: #ffeaa7;
+    color: #856404;
+}
+
+.wcusage-widget-order-status.status-cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.wcusage-widget-no-referrals {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+.wcusage-widget-no-referrals p {
+    margin: 0;
+    font-style: italic;
+}
+
+/* Simple Table Styles for Payouts */
+.wcusage-widget-simple-table {
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.wcusage-widget-table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 12px;
+}
+
+.wcusage-widget-table-row:last-child {
+    border-bottom: none;
+}
+
+.wcusage-widget-table-row:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.wcusage-widget-table-amount {
+    font-weight: 600;
+    color: #495057;
+}
+
+.wcusage-widget-table-date {
+    color: #6c757d;
+    font-size: 11px;
+}
+
+.wcusage-widget-table-status {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.wcusage-widget-table-status.pending {
+    background: #ffeaa7;
+    color: #856404;
+}
+
+.wcusage-widget-table-status.paid {
+    background: #d4edda;
+    color: #155724;
+}
+
+/* Ensure payouts tab actions are positioned like other tabs */
+#tab-payouts .wcusage-widget-actions {
+    display: none;
+}
+
+/* Copy actions for links tab */
+.wcusage-widget-copy-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.wcusage-widget-copy-actions .wcusage-widget-btn {
+    flex: 1;
+}
+
+/* Short URL button specific styles */
+.wcusage-generate-short-url {
+    position: relative;
+}
+
+.wcusage-generate-short-url:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.wcusage-short-url-spinner {
+    margin-left: 4px;
+}
+
+/* Mobile responsive - stack buttons vertically on small screens */
+@media (max-width: 400px) {
+    .wcusage-widget-copy-actions {
+        flex-direction: column;
+    }
+    
+    .wcusage-widget-copy-actions .wcusage-widget-btn {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Registration Form Styles - Modernized */
+.wcusage-widget-registration-form {
+    padding: 20px;
+    max-height: 450px;
+    overflow-y: auto;
+    background: #fafbfc;
+}
+
+.wcusage-widget-registration-form .wcu-form-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1e5e9;
+}
+
+.wcusage-widget-registration-form .wcusage-register-form-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #1b3e47 !important;
+    margin: 0 0 20px 0 !important;
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+/* Form Layout - Single Column Fixed */
+.wcusage-widget-registration-form .wcu_form_style_columns {
+    display: block !important;
+}
+
+.wcusage-widget-registration-form .wcu-register-field-col,
+.wcusage-widget-registration-form .wcu-register-field-col-1,
+.wcusage-widget-registration-form .wcu-register-field-col-2,
+.wcusage-widget-registration-form .wcu-register-field-col-username,
+.wcusage-widget-registration-form .wcu-register-field-col-email,
+.wcusage-widget-registration-form .wcu-register-field-col-password,
+.wcusage-widget-registration-form .wcu-register-field-col-password-confirm {
+    width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    float: none !important;
+    display: block !important;
+}
+
+/* Labels */
+.wcusage-widget-registration-form label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #374151 !important;
+    margin-bottom: 4px !important;
+    display: block;
+}
+
+/* Input Fields */
+.wcusage-widget-registration-form input[type="text"],
+.wcusage-widget-registration-form input[type="email"],
+.wcusage-widget-registration-form input[type="password"],
+.wcusage-widget-registration-form textarea,
+.wcusage-widget-registration-form select {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 10px 12px !important;
+    border: 1.5px solid #d1d5db !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    transition: all 0.2s ease !important;
+    background: white !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+.wcusage-widget-registration-form input[type="text"]:focus,
+.wcusage-widget-registration-form input[type="email"]:focus,
+.wcusage-widget-registration-form input[type="password"]:focus,
+.wcusage-widget-registration-form textarea:focus,
+.wcusage-widget-registration-form select:focus {
+    outline: none !important;
+    border-color: #1b3e47 !important;
+    box-shadow: 0 0 0 3px rgba(27, 62, 71, 0.1) !important;
+}
+
+/* Checkbox styling */
+.wcusage-widget-registration-form .wcu-reg-terms {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin: 16px 0 !important;
+    padding: 12px !important;
+    background: #f8f9fa !important;
+    border-radius: 8px !important;
+    border-left: 3px solid #1b3e47 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms span:first-child {
+    float: none !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms span:last-child {
+    line-height: 1.4 !important;
+    font-size: 13px !important;
+    color: #4b5563 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    margin-top: 2px !important;
+    accent-color: #1b3e47 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms a {
+    color: #1b3e47 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms a:hover {
+    text-decoration: underline !important;
+    color: #005d75 !important;
+    opacity: 0.8;
+}
+
+/* Registration form submit button */
+.wcusage-widget-registration-form .woocommerce-button,
+.wcusage-widget-registration-form button,
+.wcusage-widget-registration-form input[type="submit"] {
+    background: linear-gradient(135deg, var(--wcusage-widget-theme-color) 0%, var(--wcusage-widget-theme-color) 100%) !important;
+    color: white !important;
+    border: 2px solid var(--wcusage-widget-theme-color) !important;
+    border-radius: 8px !important;
+    padding: 12px 32px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 2px 4px rgba(27, 62, 71, 0.2) !important;
+}
+
+.wcusage-widget-registration-form .woocommerce-button:hover,
+.wcusage-widget-registration-form .woocommerce-button:active,
+.wcusage-widget-registration-form .woocommerce-button:focus,
+.wcusage-widget-registration-form button:hover,
+.wcusage-widget-registration-form button:active,
+.wcusage-widget-registration-form button:focus,
+.wcusage-widget-registration-form input[type="submit"]:hover,
+.wcusage-widget-registration-form input[type="submit"]:active,
+.wcusage-widget-registration-form input[type="submit"]:focus {
+    background: linear-gradient(135deg, var(--wcusage-widget-theme-color) 0%, var(--wcusage-widget-theme-color) 100%) !important;
+    border-color: var(--wcusage-widget-theme-color) !important;
+    opacity: 0.8 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(27, 62, 71, 0.3) !important;
+}
+
+/* Registration form focus styles */
+.wcusage-widget-registration-form input[type="text"]:focus,
+.wcusage-widget-registration-form input[type="email"]:focus,
+.wcusage-widget-registration-form input[type="password"]:focus,
+.wcusage-widget-registration-form textarea:focus,
+.wcusage-widget-registration-form select:focus {
+    outline: none !important;
+    border-color: var(--wcusage-widget-theme-color) !important;
+    box-shadow: 0 0 0 3px rgba(27, 62, 71, 0.1) !important;
+}
+
+/* Registration form terms section */
+.wcusage-widget-registration-form .wcu-reg-terms {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin: 16px 0 !important;
+    padding: 12px !important;
+    background: #f8f9fa !important;
+    border-radius: 8px !important;
+    border-left: 3px solid var(--wcusage-widget-theme-color) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    margin-top: 2px !important;
+    accent-color: var(--wcusage-widget-theme-color) !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms a {
+    color: var(--wcusage-widget-theme-color) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms a:hover {
+    text-decoration: underline !important;
+    color: var(--wcusage-widget-theme-color) !important;
+    opacity: 0.8;
+}
+
+/* Loading Spinner */
+.wcusage-widget-registration-form .register-spinner {
+    display: none !important;
+    text-align: center !important;
+    margin: 15px auto !important;
+    font-size: 18px !important;
+    color: #1b3e47 !important;
+    width: 100% !important;
+}
+
+.wcusage-widget-registration-form .register-spinner.fa-spin {
+    animation: spin 1s linear infinite !important;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.wcusage-widget-registration-form .wcusage-register-success,
+.wcusage-widget-registration-form .wcusage-register-error {
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    margin-bottom: 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.wcusage-widget-registration-form .wcusage-register-success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%) !important;
+    color: #155724 !important;
+    border: 1px solid #c3e6cb !important;
+    border-left: 4px solid #28a745 !important;
+}
+
+.wcusage-widget-registration-form .wcusage-register-error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%) !important;
+    color: #721c24 !important;
+    border: 1px solid #f5c6cb !important;
+    border-left: 4px solid #dc3545 !important;
+}
+
+/* Coupon Code Display */
+.wcusage-widget-coupon-display {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.wcusage-widget-coupon-header {
+    margin-bottom: 10px;
+}
+
+.wcusage-widget-coupon-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wcusage-widget-coupon-code-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.wcusage-widget-coupon-description {
+    font-size: 14px;
+    color: #495057;
+}
+
+.wcusage-widget-coupon-code {
+    background: white;
+    border: 2px dashed var(--wcusage-widget-theme-color);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--wcusage-widget-theme-color);
+    letter-spacing: 1px;
+    user-select: all;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.wcusage-widget-coupon-code:hover {
+    background: #f8f9fa;
+    border-color: var(--wcusage-widget-theme-color);
+    color: var(--wcusage-widget-theme-color);
+    opacity: 0.8;
+}
+
+.wcusage-widget-coupon-copy-btn {
+    background: #f8f9fa;
+    color: var(--wcusage-widget-theme-color);
+    border: 1px solid var(--wcusage-widget-theme-color);
+    border-radius: 6px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wcusage-widget-coupon-copy-btn:hover,
+.wcusage-widget-coupon-copy-btn:active,
+.wcusage-widget-coupon-copy-btn:focus {
+    background: var(--wcusage-widget-theme-color);
+    border-color: var(--wcusage-widget-theme-color);
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+/* Widget Section Styles - Fixed */
+.wcusage-widget-section {
+    margin-bottom: 20px;
+}
+
+.wcusage-widget-section:last-child {
+    margin-bottom: 0;
+}
+
+.wcusage-widget-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--wcusage-widget-theme-color);
+    margin: 0 0 12px 0;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.wcusage-widget-section-sub-title {
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* Statistics Grid Updates */
+.wcusage-widget-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Link stats specific grid - 3 columns */
+.wcusage-widget-link-stats-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+/* Remove the old links tab specific grid styles since link stats moved to stats tab */
+#tab-links .wcusage-widget-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Registration Form Styles - Keep separate from dashboard styles */
+.wcusage-widget-registration-form {
+    padding: 20px;
+    max-height: 450px;
+    overflow-y: auto;
+    background: #fafbfc;
+}
+
+/* Don't let registration form styles affect dashboard */
+.wcusage-widget-registration-form .wcu-form-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1e5e9;
+}
+
+.wcusage-widget-registration-form .wcusage-register-form-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #1b3e47 !important;
+    margin: 0 0 20px 0 !important;
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+/* Form Layout - Single Column Fixed */
+.wcusage-widget-registration-form .wcu_form_style_columns {
+    display: block !important;
+}
+
+.wcusage-widget-registration-form .wcu-register-field-col,
+.wcusage-widget-registration-form .wcu-register-field-col-1,
+.wcusage-widget-registration-form .wcu-register-field-col-2,
+.wcusage-widget-registration-form .wcu-register-field-col-username,
+.wcusage-widget-registration-form .wcu-register-field-col-email,
+.wcusage-widget-registration-form .wcu-register-field-col-password,
+.wcusage-widget-registration-form .wcu-register-field-col-password-confirm {
+    width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    float: none !important;
+    display: block !important;
+}
+
+/* Labels */
+.wcusage-widget-registration-form label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #374151 !important;
+    margin-bottom: 4px !important;
+    display: block;
+}
+
+/* Input Fields */
+.wcusage-widget-registration-form input[type="text"],
+.wcusage-widget-registration-form input[type="email"],
+.wcusage-widget-registration-form input[type="password"],
+.wcusage-widget-registration-form textarea,
+.wcusage-widget-registration-form select {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 10px 12px !important;
+    border: 1.5px solid #d1d5db !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    transition: all 0.2s ease !important;
+    background: white !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+.wcusage-widget-registration-form input[type="text"]:focus,
+.wcusage-widget-registration-form input[type="email"]:focus,
+.wcusage-widget-registration-form input[type="password"]:focus,
+.wcusage-widget-registration-form textarea:focus,
+.wcusage-widget-registration-form select:focus {
+    outline: none !important;
+    border-color: #1b3e47 !important;
+    box-shadow: 0 0 0 3px rgba(27, 62, 71, 0.1) !important;
+}
+
+/* Checkbox styling */
+.wcusage-widget-registration-form .wcu-reg-terms {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin: 16px 0 !important;
+    padding: 12px !important;
+    background: #f8f9fa !important;
+    border-radius: 8px !important;
+    border-left: 3px solid #1b3e47 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms span:first-child {
+    float: none !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms span:last-child {
+    line-height: 1.4 !important;
+    font-size: 13px !important;
+    color: #4b5563 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    margin-top: 2px !important;
+    accent-color: #1b3e47 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms a {
+    color: #1b3e47 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+.wcusage-widget-registration-form .wcu-reg-terms a:hover {
+    text-decoration: underline !important;
+    color: #005d75 !important;
+    opacity: 0.8;
+}
+
+/* Submit Button */
+.wcusage-widget-registration-form .wcu-register-form-button {
+    margin: 20px 0 0 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.wcusage-widget-registration-form .woocommerce-button,
+.wcusage-widget-registration-form button,
+.wcusage-widget-registration-form input[type="submit"] {
+    background: linear-gradient(135deg, var(--wcusage-widget-theme-color) 0%, var(--wcusage-widget-theme-color) 100%) !important;
+    color: white !important;
+    border: 2px solid var(--wcusage-widget-theme-color) !important;
+    border-radius: 8px !important;
+    padding: 12px 32px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 2px 4px rgba(27, 62, 71, 0.2) !important;
+}
+
+.wcusage-widget-registration-form .woocommerce-button:hover,
+.wcusage-widget-registration-form .woocommerce-button:active,
+.wcusage-widget-registration-form .woocommerce-button:focus,
+.wcusage-widget-registration-form button:hover,
+.wcusage-widget-registration-form button:active,
+.wcusage-widget-registration-form button:focus,
+.wcusage-widget-registration-form input[type="submit"]:hover,
+.wcusage-widget-registration-form input[type="submit"]:active,
+.wcusage-widget-registration-form input[type="submit"]:focus {
+    background: linear-gradient(135deg, var(--wcusage-widget-theme-color) 0%, var(--wcusage-widget-theme-color) 100%) !important;
+    border-color: var(--wcusage-widget-theme-color) !important;
+    opacity: 0.8 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(27, 62, 71, 0.3) !important;
+}
+
+/* Clear floats */
+.wcusage-widget-registration-form::after,
+.wcusage-widget-registration-form .wcu_form_style_columns::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Clear both divs */
+.wcusage-widget-registration-form div[style*="clear: both"] {
+    display: none !important;
+}
+
+/* Hidden honeypot field */
+.wcusage-widget-registration-form div[style*="display: none"] {
+    display: none !important;
+}
+
+/* Benefits Message Styles */
+.wcusage-widget-benefits-message {
+    background: linear-gradient(135deg, var(--wcusage-widget-theme-color) 0%, var(--wcusage-widget-theme-color) 100%);
+    border: 1px solid var(--wcusage-widget-theme-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.wcusage-widget-benefits-header h3 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+}
+
+.wcusage-widget-benefits-header p {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 0 20px 0 !important;
+    line-height: 1.4 !important;
+}
+
+.wcusage-widget-benefits-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: left;
+}
+
+.wcusage-widget-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 13px;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.wcusage-widget-benefit-item:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wcusage-widget-benefit-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+    color: white;
+}
+
+.wcusage-widget-coupon-select-global {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 16px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+    .wcusage-widget-coupon-select-global {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+    
+    .wcusage-widget-coupon-select-global select {
+        width: 100%;
+    }
+    
+    .wcusage-widget-benefits-message {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .wcusage-widget-benefits-header h3 {
+        font-size: 18px !important;
+    }
+    
+    .wcusage-widget-benefits-header p {
+        font-size: 13px !important;
+    }
+    
+    .wcusage-widget-benefit-item {
+        font-size: 12px;
+        padding: 10px;
+    }
+    
+    .wcusage-widget-benefit-icon {
+        font-size: 14px;
+    }
+    
+    .wcusage-floating-popup {
+        width: 350px;
+    }
+    
+    .wcusage-widget-actions {
+        flex-direction: column;
+    }
+    
+    .wcusage-floating-widget {
+        bottom: 10px;
+        left: 10px;
+    }
+    
+    .wcusage-widget-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Links tab mobile - stack vertically */
+    #tab-links .wcusage-widget-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wcusage-widget-referral-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .wcusage-widget-table-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 10px 12px;
+    }
+    
+    .wcusage-widget-table-date,
+    .wcusage-widget-table-status {
+        align-self: flex-end;
+    }
+    
+    .wcusage-widget-coupon-display {
+        padding: 12px;
+    }
+    
+    .wcusage-widget-coupon-code {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    
+    .wcusage-widget-coupon-copy-btn {
+        padding: 8px 10px;
+    }
+    
+    .wcusage-widget-section-title {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    
+    .wcusage-widget-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wcusage-widget-link-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Registration form mobile styles */
+    .wcusage-widget-registration-form {
+        padding: 16px;
+    }
+    
+    .wcusage-widget-registration-form .wcu-form-section {
+        padding: 20px;
+        border-radius: 8px;
+    }
+    
+    .wcusage-widget-registration-form .wcusage-register-form-title {
+        font-size: 16px !important;
+    }
+    
+    .wcusage-widget-registration-form input[type="text"],
+    .wcusage-widget-registration-form input[type="email"],
+    .wcusage-widget-registration-form input[type="password"] {
+        padding: 12px !important;
+    }
+    
+    .wcusage-widget-benefits-message {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .wcusage-widget-benefits-header h3 {
+        font-size: 18px !important;
+    }
+    
+    .wcusage-widget-benefits-header p {
+        font-size: 13px !important;
+    }
+    
+    .wcusage-widget-benefit-item {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+    
+    .wcusage-widget-benefit-icon {
+        font-size: 14px;
+    }
+    
+    .wcusage-floating-widget.wcusage-position-center-left .wcusage-floating-popup {
+        left: calc(10px + 50px + 5px); /* adjust for mobile margins */
+        width: calc(100vw - 80px);
+        max-width: 300px;
+    }
+    
+    .wcusage-floating-widget.wcusage-position-center-right .wcusage-floating-popup {
+        right: calc(10px + 50px + 5px); /* adjust for mobile margins */
+        width: calc(100vw - 80px);
+        max-width: 300px;
+    }
+    
+    .wcusage-floating-widget.wcusage-position-center-left,
+    .wcusage-floating-widget.wcusage-position-center-right {
+        left: 10px;
+        right: 10px;
+    }
+}
+
+/* Ensure tabs are hidden when not visible */
+.wcusage-widget-tab:not(:visible) {
+    display: none !important;
+}
+
+.wcusage-widget-tab-content:not(.active) {
+    display: none !important;
+}
+
+/* Widget Creatives Styles */
+.wcusage-widget-creatives-container {
+    padding: 0;
+}
+
+.wcusage-widget-creatives-section {
+    margin-bottom: 20px;
+}
+
+.wcusage-widget-creatives-section:last-child {
+    margin-bottom: 0;
+}
+
+/* 2-column grid for creatives */
+.wcusage-widget-creatives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.wcusage-widget-creative-item {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.wcusage-widget-creative-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--wcusage-widget-theme-color);
+}
+
+/* Creative Preview */
+.wcusage-widget-creative-preview {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.wcusage-widget-creative-image {
+    width: 100%;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #dee2e6;
+    position: relative;
+}
+
+.wcusage-widget-creative-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wcusage-widget-creative-pdf .wcusage-widget-creative-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+.wcusage-widget-creative-video {
+    width: 100%;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #dee2e6;
+}
+
+.wcusage-widget-creative-video iframe,
+.wcusage-widget-creative-video video {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Creative Info */
+.wcusage-widget-creative-info {
+    text-align: center;
+}
+
+.wcusage-widget-creative-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--wcusage-widget-theme-color);
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+}
+
+.wcusage-widget-creative-description {
+    font-size: 10px;
+    color: #6c757d;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Creative Action Buttons */
+.wcusage-widget-creative-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.wcusage-widget-creative-btn {
+    background: var(--wcusage-widget-theme-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 24px;
+}
+
+.wcusage-widget-creative-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+.wcusage-widget-creative-btn i {
+    font-size: 10px;
+}
+
+/* Color Creatives */
+.wcusage-widget-colors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.wcusage-widget-color-item {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.wcusage-widget-color-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wcusage-widget-color-swatch {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.wcusage-widget-color-swatch:hover {
+    opacity: 0.9;
+}
+
+.wcusage-widget-color-code {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.wcusage-widget-color-info {
+    padding: 8px;
+    text-align: center;
+}
+
+.wcusage-widget-color-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--wcusage-widget-theme-color);
+    margin: 0 0 4px 0;
+}
+
+.wcusage-widget-color-description {
+    font-size: 10px;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* No creatives message */
+.wcusage-widget-no-creatives {
+    text-align: center;
+    padding: 30px 20px;
+    color: #6c757d;
+}
+
+.wcusage-widget-no-creatives p {
+    margin: 0;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Responsive adjustments for creatives */
+@media (max-width: 480px) {
+    .wcusage-widget-creatives-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wcusage-widget-colors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wcusage-widget-creative-image {
+        height: 100px;
+    }
+    
+    .wcusage-widget-creative-video {
+        height: 100px;
+    }
+    
+    .wcusage-widget-creative-title {
+        font-size: 13px;
+    }
+    
+    .wcusage-widget-creative-description {
+        font-size: 11px;
+    }
+    
+    .wcusage-widget-color-swatch {
+        height: 50px;
+    }
+    
+    .wcusage-widget-color-code {
+        font-size: 12px;
+    }
+}
+
+/* Refresh Statistics Button */
+.wcusage-widget-refresh-notice {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    background: #f8f9fa;
+    border-left: 4px solid #ffc107;
+    margin: 10px 0;
+}
+.wcusage-widget-notice-icon {
+    margin-right: 15px;
+    color: #ffc107;
+    font-size: 24px;
+}
+.wcusage-widget-notice-content h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+.wcusage-widget-notice-content p {
+    margin: 0 0 15px 0;
+    color: #666;
+    line-height: 1.5;
+}
+.wcusage-widget-dashboard-button {
+    display: inline-block;
+    background: #007cba;
+    color: white !important;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.wcusage-widget-dashboard-button:hover {
+    background: #005a87;
+}

@@ -1,0 +1,25 @@
+# ── Credenciales y datos sensibles ──────────────────────────
+.env
+wp-config.php
+wp-content/sgs_encrypt_key.php
+wp-content/sgo-config.php
+
+# ── Base de datos (contiene usuarios, datos, contraseñas) ───
+db/
+
+# ── WordPress: archivos generados en tiempo de ejecución ────
+wp-content/uploads/
+wp-content/cache/
+wp-content/debug.log
+wp-content/wflogs/
+wp-content/jetpack-waf/
+wp-content/object-cache.php
+
+# ── Artefactos de desarrollo local ──────────────────────────
+connect_error
+local-xdebuginfo.php
+
+# ── Archivos del sistema operativo ──────────────────────────
+.DS_Store
+Thumbs.db
+*.log

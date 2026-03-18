@@ -1,0 +1,81 @@
+/* Styles for Registrations admin list table actions */
+
+/* Normalize button layout and center icons/text */
+td.column-action1 a.button,
+td.column-action1 button.payout-action,
+td.column-action1 button[name="submitregisterdelete"] {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 13px; /* reset in case parent is adjusted */
+}
+
+/* Icon vertical alignment */
+/* Slight nudge only for anchor buttons (View Affiliate/Dashboard) */
+td.column-action1 a.button .dashicons,
+td.column-action1 a.button .fa,
+td.column-action1 a.button .fa-solid,
+td.column-action1 a.button .fa-regular {
+  line-height: 1;
+  position: relative;
+  top: 3px;
+}
+/* Reset nudge for Accept/Decline buttons */
+td.column-action1 button.payout-action .dashicons {
+  line-height: 1;
+  position: relative;
+  top: 0;
+}
+/* Reset nudge for Delete icon */
+td.column-action1 button[name="submitregisterdelete"] .fa,
+td.column-action1 button[name="submitregisterdelete"] .fa-solid,
+td.column-action1 button[name="submitregisterdelete"] .fa-regular {
+  line-height: 1;
+  position: relative;
+  top: 0;
+}
+
+/* Extra spacing above delete button */
+td.column-action1 button[name="submitregisterdelete"] {
+  margin-top: 12px;
+}
+/* If delete button is inside a second form, add spacing reliably */
+td.column-action1 form + form button[name="submitregisterdelete"] {
+  margin-top: 12px !important;
+}
+
+/* Disabled state for anchor buttons */
+td.column-action1 a.button.disabled,
+td.column-action1 a.button-primary.disabled {
+  pointer-events: none;
+  opacity: 0.55;
+  filter: grayscale(20%);
+  cursor: default;
+}
+
+/* Keep any inline inputs/paragraphs in action column full width */
+.wp-list-table .column-action1 p {
+  width: 100%;
+  margin: 0 0 8px 0;
+}
+
+/* Two-up layout on wider screens */
+@media (min-width: 1750px) {
+  /* Clear floats */
+  td.column-action1::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+/* If there is only one action of a type, keep it full width on large screens */
+@media (min-width: 1750px) {
+  .wp-list-table .column-action1 a.button:first-of-type:last-of-type,
+  .wp-list-table .column-action1 button.payout-action:first-of-type:last-of-type {
+    width: 100%;
+    margin-left: 0;
+  }
+}

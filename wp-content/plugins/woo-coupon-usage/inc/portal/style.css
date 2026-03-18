@@ -1,0 +1,1352 @@
+/* Font Awesome Icon Fallback */
+/* Ensure Font Awesome icons display properly */
+.fa:not([style*="display: none"]), 
+.fas:not([style*="display: none"]), 
+.far:not([style*="display: none"]), 
+.fal:not([style*="display: none"]), 
+.fab:not([style*="display: none"]) {
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'FontAwesome' !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+.fa, .fas, .fal {
+    font-weight: 900;
+}
+.far, .fab {
+    font-weight: 400;
+}
+.fab {
+    font-family: 'Font Awesome 6 Brands', 'Font Awesome 5 Brands' !important;
+}
+
+/* Define CSS Variables for Light and Dark Modes */
+:root {
+    /* Light Mode Colors */
+    --background-color: #f5f5f5; /* Body background */
+    --sidebar-bg: #2c3e50; /* Sidebar background */
+    --sidebar-bg-link: #3498db; /* Sidebar background for links */
+    --sidebar-text: #ffffff; /* Sidebar text */
+    --content-bg: #ffffff; /* Content background */
+    --header-footer-bg: #f0f0f0; /* Header and footer background */
+    /* Typography */
+    --primary-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --text-color: #2c3e50; /* Primary text color */
+    --secondary-text-color: #7f8c8d; /* Secondary text (e.g., small stats) */
+    --border-color: #ddd; /* Borders */
+    --button-bg: #3498db; /* Button background */
+    --button-bg-hover: #2980b9; /* Button hover background */
+    --button-text: #ffffff; /* Button text */
+    --accent-color: #3498db; /* Accent color (e.g., borders, links) */
+    --positive-color: #27ae60; /* Positive stats */
+    --negative-color: #e74c3c; /* Negative stats */
+    --table-header-bg: #f8f9fa; /* Table header background */
+    --table-row-hover-bg: #f8f9fa; /* Table row hover background */
+    --input-bg: #f0f0f0; /* Input background (e.g., dropdowns, forms) */
+}
+
+/* Dark Mode Colors */
+body.dark-mode {
+    /* Override CSS variables for dark mode */
+    --background-color: #1a1a1a; /* Dark body background */
+    --sidebar-bg: #121212; /* Darker sidebar background */
+    --sidebar-bg-link: #1e1e1e; /* Dark sidebar background for links */
+    --sidebar-text: #e0e0e0; /* Lighter sidebar text */
+    --content-bg: #1e1e1e; /* Dark content background */
+    --content-bg2: #1b1b1b; /* Darker content background */
+    --header-footer-bg: #252525; /* Dark header/footer background */
+    --text-color: #f1f1f1; /* Light text color */
+    --secondary-text-color: #b0b0b0; /* Lighter secondary text */
+    --border-color: #444; /* Darker borders */
+    --button-bg: #1e90ff; /* Adjusted button background */
+    --button-bg-hover: #4682b4; /* Adjusted button hover */
+    --button-text: #ffffff; /* Keep button text white */
+    --accent-color: #abd5ff; /* Adjusted accent color */
+    --positive-color: #2ecc71; /* Adjusted positive stats */
+    --negative-color: #ff4757; /* Adjusted negative stats */
+    --table-header-bg: #333; /* Dark table header */
+    --table-row-hover-bg: #3a3a3a; /* Dark table row hover */
+    --input-bg: #3a3a3a; /* Dark input background */
+}
+
+body {
+    margin: 0;
+    font-family: var(--primary-font) !important;
+    background: var(--background-color); /* Use variable */
+}
+
+.sidebar,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+input,
+select,
+textarea {
+    font-family: var(--primary-font) !important;
+}
+
+.wcu-settings-tab-content input[type="text"],
+.wcu-settings-tab-content input[type="url"],
+.wcu-settings-tab-content input[type="password"],
+.wcu-settings-tab-content input[type="email"],
+.wcu-settings-tab-content input[type="submit"],
+.wcu-settings-tab-content select,
+.wcu-settings-tab-content textarea {
+    padding: 5px 10px;
+    min-height: 40px;
+    border-radius: 2px;
+    border: 1px solid #dbdada;
+}
+
+.wcu-settings-tab-nav li {
+    font-size: 15px;
+}
+
+.wcusage_custom_ref_url {
+    margin-top: 5px;
+}
+
+#wcu-add-campaign-name {
+    min-height: 40px;
+}
+
+.affiliate-portal-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.wcu-tab-title {
+    margin-top: 10px;
+}
+
+.sidebar {
+    width: 220px;
+    min-width: 220px;
+    background: var(--sidebar-bg); /* Use variable */
+    color: var(--sidebar-text); /* Use variable */
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for slide-in/out */
+    border-right: 1px solid var(--border-color); /* Use variable */
+}
+
+.sidebar-logo {
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.sidebar-logo img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.sidebar-logo h2 {
+    color: var(--sidebar-text);
+}
+
+.portal-tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.portal-tablink {
+    background: var(--sidebar-bg); /* Use variable */
+    color: var(--sidebar-text); /* Use variable */
+    border: none;
+    padding: 12px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 25px;
+    transition: background 0.3s, color 0.3s;
+    border-left: 4px solid transparent; /* For active tab indicator */
+    outline: none;
+    font-family: var(--primary-font) !important;
+    text-decoration: none;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.portal-tablink i {
+    width: 10px;
+    margin-right: 10px;
+}
+
+.content {
+    flex: 1;
+    padding: 0; /* Reset padding for custom layout */
+    transition: margin-left 0.3s ease-in-out; /* Smooth transition for content shift */
+    background: var(--content-bg); /* Use variable for content background */
+}
+
+.content-header {
+    background: var(--header-footer-bg); /* Use variable */
+    padding: 15px 70px; /* Padding for header bar (left/right) */
+    border-bottom: 1px solid var(--border-color); /* Use variable */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* For positioning hamburger menu */
+}
+
+.content-body {
+    padding: 40px 70px 100px 70px;
+}
+
+.content-footer {
+    background: var(--header-footer-bg); /* Use variable */
+    padding: 15px 70px; /* Same padding as header (left/right) */
+    border-top: 1px solid var(--border-color); /* Use variable */
+    text-align: center;
+    color: var(--text-color); /* Use variable */
+    font-size: 14px;
+}
+
+.content-footer p {
+    margin: 0;
+}
+
+.portal-tabcontent {
+    display: none;
+}
+
+.portal-tabcontent.active {
+    display: block;
+}
+
+/* Ensure MLA tab content is styled consistently */
+.ml_wcutabcontent {
+    display: none;
+}
+.ml_wcutabcontent.active {
+    display: block;
+}
+
+.welcome-header {
+    font-size: 24px;
+    margin: 0;
+    color: var(--text-color); /* Use variable */
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.welcome-header select,
+.welcome-header input[type="hidden"] + span {
+    color: var(--text-color);
+    background: var(--input-bg2); /* Use variable for dropdown background */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.profile i {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color); /* Use variable */
+    margin-right: 10px;
+}
+
+.profile i:hover {
+    color: var(--accent-color); /* Use variable */
+}
+
+.profile .username {
+    font-size: 12px;
+    color: var(--text-color); /* Use variable */
+    margin-right: 20px;
+}
+
+.wcusage-dash-top-links {
+    display: flex;
+    align-items: center;
+}
+
+.wcusage-dash-logout,
+.wcusage-dash-mla-link,
+.wcusage-dash-username {
+    margin-left: 10px;
+}
+
+.wcusage-refresh-data {
+    margin-left: 10px;
+    color: var(--accent-color); /* Use variable */
+    cursor: pointer;
+}
+
+.wcusage-refresh-data i {
+    font-size: 16px;
+}
+
+.wcusage-refresh-data:hover {
+    color: var(--button-bg-hover); /* Use variable */
+}
+
+#wcu-coupon-title {
+    display: none;
+}
+
+.wcu-coupon-select {
+    color: #2c3e50;
+}
+
+.show_statistics {
+    margin-top: -20px;
+}
+
+.wcusage-stats-title,
+.wcu-tab-title {
+    font-size: 22px !important;
+    font-weight: bold;
+    color: var(--text-color); /* Use variable */
+}
+
+.wcu-loading-image {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--secondary-text-color); /* Use variable */
+}
+
+.wcu-loading-loader {
+    border-color: rgba(0, 0, 0, 0.08);
+    border-top-color: var(--accent-color);
+}
+
+.wcu-loading-loader-text {
+    color: var(--secondary-text-color);
+}
+#updated_total {
+    text-align: left;
+}
+
+.dashboard-card {
+    background: var(--content-bg); /* Use variable */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-color); /* Use variable */
+}
+
+.dashboard-card h3 {
+    margin: 0 0 15px 0;
+    color: var(--text-color); /* Use variable */
+    font-size: 18px;
+}
+
+.dashboard-card .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.dashboard-card .stat-item {
+    background: var(--header-footer-bg); /* Use variable */
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+}
+
+.dashboard-card .stat-item span {
+    display: block;
+    font-size: 24px;
+    color: var(--text-color); /* Use variable */
+    font-weight: bold;
+}
+
+.dashboard-card .stat-item small {
+    color: var(--secondary-text-color); /* Use variable */
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.dashboard-card .stat-item .value {
+    color: var(--positive-color); /* Use variable */
+}
+
+.dashboard-card .stat-item .negative {
+    color: var(--negative-color); /* Use variable */
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color); /* Use variable */
+    color: var(--text-color); /* Use variable */
+}
+
+.wcuTable {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.wcuTableCell {
+    background: var(--content-bg); /* Use variable */
+}
+
+.dashboard-table th {
+    background: var(--table-header-bg); /* Use variable */
+    font-weight: bold;
+}
+
+.dashboard-table tr:hover {
+    background: var(--table-row-hover-bg); /* Use variable */
+}
+
+.dashboard-table .unpaid {
+    color: var(--negative-color); /* Use variable */
+    font-weight: bold;
+}
+
+#wcu-orders-status {
+    padding: 0px 10px;
+    min-height: 40px;
+}
+
+.login-registration-container input[type="submit"],
+.login-registration-container input[type="button"],
+.login-registration-container button {
+    width: 100% !important;
+    margin: 40px 0 0 0 !important;
+    border: 1px solid var(--border-color) !important; /* Use variable */
+    border-radius: 4px !important;
+    box-sizing: border-box;
+    background: #1e1e1e; /* Keep hardcoded as it's a specific button style */
+}
+
+.woocommerce-form-login__submit, #wcu-register-button {
+    padding: 12px;
+    font-size: 18px;
+    line-height: 18px;
+}
+.registration-form .wcu_form_affiliate_register input, .woocommerce-form-login input {
+    margin-bottom: 12px !important;
+}
+/* Radio top margin */
+.registration-form .wcu_form_affiliate_register input[type="radio"],
+.woocommerce-form-login input[type="radio"] {
+    margin-bottom: 0px !important;
+    margin-top: 10px !important;
+}
+/* Not on checkboxes */
+body .registration-form .wcu_form_affiliate_register input[type="checkbox"],
+body .woocommerce-form-login input[type="checkbox"] {
+    margin-bottom: 0px !important;
+}
+
+.registration-message {
+    text-align: center;
+}
+
+.affiliate-portal-container .woocommerce-form-login p.form-row {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.form-row .woocommerce-form__input.woocommerce-form__input-checkbox {
+    margin-top: 20px;
+}
+
+.login-form h2, .wcusage-register-form-title {
+    margin-top: 20px !important;
+    margin-bottom: 25px !important;
+    text-align: center;
+}
+
+.wcu_form_affiliate_register input {
+    margin-bottom: 10px;
+}
+
+body.dark-mode .login-registration-container input[type="submit"],
+body.dark-mode .login-registration-container input[type="button"],
+body.dark-mode .login-registration-container button {
+    background: var(--button-bg); /* Override for dark mode */
+}
+
+.login-registration-container .form-row-first,
+.login-registration-container .form-row-last {
+    width: 100%;
+    float: left;
+    margin-bottom: 0px;
+    margin-right: 4%;
+}
+
+.login-registration-container input[type="text"],
+.login-registration-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color); /* Use variable */
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: var(--input-bg); /* Use variable for input background */
+    color: var(--text-color); /* Use variable */
+}
+
+.wcusage_settings_form input[type="submit"], .wcusage_settings_form input[type="button"], .wcusage_settings_form input[type="date"], .wcusage_settings_form input[type="month"], .wcu-monthly-orders-button, .wcu-button-export, .submitpayoutno, .submitpayoutyes 
+{
+    border: 1px solid var(--border-color) !important; /* Use variable */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="tel"],
+input[type="search"],
+input[type="date"] {
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid var(--border-color); /* Use variable */
+}
+
+
+.login-registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 25px 100px 25px; /* Match content-body padding */
+}
+
+#wcu-register-button {
+    margin-top: 15px !important;
+    margin-bottom: -10px !important;
+}
+
+.login-form,
+.registration-form {
+    width: 50%;
+    padding: 30px;
+    background: var(--content-bg); /* Use variable */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 20px;
+}
+
+.content .login-registration-container .login-form h2,
+.content .login-registration-container .registration-form h2,
+.content .login-registration-container .wcusage-register-form-title {
+    font-size: 24px !important;
+    line-height: 24px;
+    color: var(--text-color); /* Use variable */
+    font-weight: bold;
+    margin-top: 0px !important;
+    margin-bottom: 25px !important;
+}
+
+.login-form label,
+.registration-form label {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 16px;
+    display: inline-block !important;
+}
+
+.content .wcu-form-section .wcusage-register-form-title,
+.content .wcu-form-section .wcusage-login-form-title {
+    margin-top: 0px !important;
+}
+
+.login-form form,
+.registration-form form {
+    display: block;
+    flex-direction: column;
+}
+
+.login-form label,
+.registration-form label {
+    margin-bottom: 8px;
+    color: var(--text-color); /* Use variable */
+    font-weight: bold;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color); /* Use variable */
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color); /* Use variable */
+    background: var(--input-bg); /* Use variable for input background */
+    max-width: 100% !important;
+    width: 100%;
+}
+
+.login-form input[type="submit"],
+.login-form button[type="submit"],
+.registration-form input[type="submit"] {
+    margin-top: 20px !important;
+    padding: 12px;
+    background: var(--button-bg); /* Use variable */
+    color: var(--button-text); /* Use variable */
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.woocommerce-form-login {
+    margin-bottom: 0px;
+}
+
+.login-form input[type="submit"]:hover,
+.registration-form input[type="submit"]:hover {
+    background: var(--button-bg-hover); /* Use variable */
+}
+
+.login-form .lost_password,
+.login-form .register {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--accent-color); /* Use variable */
+    font-size: 14px;
+}
+
+.login-form .lost_password a,
+.login-form .register a {
+    color: var(--accent-color); /* Use variable */
+    text-decoration: none;
+}
+
+.login-form .lost_password a:hover,
+.login-form .register a:hover {
+    text-decoration: underline;
+}
+
+body .content .wcu_form_affiliate_register p {
+	margin-bottom: 0px;
+}
+
+.sidebar.logged-out .portal-tablink {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.sidebar.logged-out #tab-page-back {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.sidebar.logged-out .portal-tablink:not(#tab-page-back) {
+    pointer-events: none;
+    cursor: default;
+}
+
+.sidebar.logged-out #tab-page-back {
+    pointer-events: auto;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.username-in-header {
+    font-size: 12px;
+    color: var(--text-color); /* Use variable */
+    margin-right: 10px;
+    white-space: nowrap;
+}
+    @media (max-width: 768px) {
+        .username-in-header {
+            display: none;
+        }
+    }
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #111;
+}
+
+.dropdown-arrow {
+    margin-left: 5px;
+    font-size: 12px;
+    color: var(--text-color); /* Use variable */
+    vertical-align: middle;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--content-bg); /* Use variable */
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1;
+    border: 1px solid var(--border-color); /* Use variable */
+    margin-top: 5px; /* Add spacing above the dropdown */
+}
+
+.dropdown-content a {
+    color: var(--text-color); /* Use variable */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--header-footer-bg); /* Use variable */
+}
+
+.dropdown-content .username {
+    padding: 12px 16px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border-color); /* Use variable */
+    margin-bottom: 5px;
+    color: var(--text-color); /* Use variable */
+}
+
+.profile-trigger:hover .dropdown-content {
+    display: block;
+}
+
+.profile-trigger:hover .username-in-header,
+.profile-trigger:hover .profile-image,
+.profile-trigger:hover .dropdown-arrow {
+    color: var(--accent-color); /* Use variable */
+}
+
+.profile-trigger:hover .profile-image {
+    border-color: var(--accent-color); /* Use variable */
+}
+
+/* Prevent text cursor on non-input areas but allow selection */
+body,
+.affiliate-portal-container,
+.sidebar,
+.content,
+.content-header,
+.welcome-header,
+.profile-dropdown,
+.profile-trigger {
+    outline: none !important; /* Remove focus outline */
+}
+
+body,
+.affiliate-portal-container,
+.sidebar,
+.content,
+.content-header,
+.welcome-header,
+.profile-dropdown,
+.profile-trigger {
+    /* Remove cursor by preventing default focus behavior */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: text; /* Safari */
+    -khtml-user-select: text; /* Konqueror HTML */
+    -moz-user-select: text; /* Firefox */
+    -ms-user-select: text; /* IE/Edge */
+    user-select: text; /* Standard */
+}
+
+body,
+.affiliate-portal-container,
+.sidebar,
+.content,
+.content-header,
+.welcome-header,
+.profile-dropdown,
+.profile-trigger {
+    /* Prevent focus from triggering cursor */
+    &:focus {
+        outline: none !important;
+    }
+}
+
+/* Ensure input elements (forms) remain focusable */
+.login-form input,
+.login-form select,
+.registration-form input,
+.registration-form select,
+.login-form textarea,
+.registration-form textarea {
+    /* Remove default always-visible outline; keep inputs selectable */
+    outline: none !important;
+    -webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+/* Accessible focus ring only when navigating with keyboard */
+.login-form input:focus-visible,
+.login-form select:focus-visible,
+.registration-form input:focus-visible,
+.registration-form select:focus-visible,
+.login-form textarea:focus-visible,
+.registration-form textarea:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.wcusagechart {
+    margin-top: 15px !important;
+}
+
+.wcutabcontent p {
+    margin-bottom: 10px;
+}
+
+#wcu6 strong {
+    font-size: 18px;
+}
+
+.referral-url-box {
+    padding-top: 15px !important;
+}
+
+.payouts-box p {
+	margin-bottom: 5px;
+}
+
+/* Bank Details Display in Portal */
+.wcu-bank-details-display {
+	font-size: 14px;
+	line-height: 1.4;
+	background: var(--input-bg) !important;
+	border: 1px solid var(--border-color) !important;
+	color: var(--text-color) !important;
+}
+
+.wcu-bank-details-display strong {
+	color: var(--text-color) !important;
+}
+
+.wcu-bank-details-display div {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 720px) {
+	.wcu-bank-details-display {
+		padding: 8px !important;
+		margin-left: -5px !important;
+		margin-right: -5px !important;
+	}
+}
+
+/* Hamburger Menu Styles */
+.content-header .hamburger-menu {
+    display: none; /* Hidden by default for desktop */
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color); /* Use variable */
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.hamburger-menu:hover,
+.hamburger-menu.active {
+    color: var(--accent-color); /* Use variable */
+}
+
+/* Dark Mode Toggle Button Styles */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-color); /* Use variable */
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.dark-mode-toggle:hover {
+    color: var(--accent-color); /* Use variable */
+}
+
+/* Mobile sidebar close button (hidden on desktop) */
+.wcu-mobile-menu-close-wrap {
+    display: none;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .affiliate-portal-container {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .content-header .hamburger-menu {
+        display: block; /* Show hamburger icon on mobile */
+        margin-left: 15px;
+        order: -1; /* Place before welcome-header */
+    }
+
+    .sidebar {
+        width: 250px; /* Slightly wider on mobile for better touch usability */
+        max-width: 85vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1000;
+        transform: translateX(-100%); /* Hidden off-screen by default */
+        overflow-y: auto; /* Allow scrolling if menu is long */
+        box-sizing: border-box;
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Slide in when active */
+    }
+
+    .content {
+        margin-left: 0; /* No sidebar space on mobile by default */
+    }
+
+    .content-header {
+        padding: 15px 20px; /* Reduced padding for mobile */
+        flex-direction: row; /* Keep items in a row */
+        align-items: center;
+        justify-content: space-between; /* Space between hamburger, title, and profile */
+        gap: 10px;
+    }
+
+    .content-header.wcu-header-title-long {
+        flex-wrap: wrap;
+    }
+
+    .welcome-header {
+        margin-bottom: 0;
+        margin-left: 10px; /* Space after hamburger */
+        flex-grow: 1;
+        min-width: 0;
+    }
+
+
+    .welcome-header h1 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    @media (max-width: 500px) {
+        .content-header.wcu-header-title-long .welcome-header {
+            order: 10;
+            flex: 1 1 100%;
+            margin-left: 0;
+            text-align: center;
+        }
+
+        .content-header.wcu-header-title-long .welcome-header h1,
+        .content-header.wcu-header-title-long .welcome-header select,
+        .content-header.wcu-header-title-long .welcome-header input[type="hidden"] + span {
+            text-align: center;
+        }
+    }
+
+    .welcome-header select,
+    .welcome-header input[type="hidden"] + span {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .profile-dropdown {
+        margin-top: 0;
+        margin-left: auto; /* Push to the right */
+        flex-shrink: 0;
+    }
+
+    .dark-mode-toggle {
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    .content-header .hamburger-menu {
+        flex-shrink: 0;
+    }
+
+    .content-body {
+        padding: 20px; /* Reduced padding for mobile */
+    }
+
+    .content-footer {
+        padding: 15px 20px; /* Reduced padding for mobile */
+    }
+
+    .login-registration-container {
+        flex-direction: column;
+        padding: 20px; /* Reduced padding for mobile */
+    }
+
+    .login-form,
+    .registration-form {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .sidebar.logged-out {
+        display: block; /* Show sidebar on mobile for logged-out users when toggled */
+    }
+
+    .profile-image {
+        width: 40px;
+        height: auto;
+    }
+
+    .username-in-header {
+        font-size: 10px;
+    }
+
+    .dropdown-content {
+        right: -20px; /* Adjust position for mobile */
+        min-width: 140px; /* Reduce width for mobile */
+    }
+
+    /* Ensure sidebar logo and tabs are styled for mobile */
+    .sidebar-logo {
+        padding: 15px 20px;
+    }
+
+    .portal-tablink {
+        padding: 15px 20px; /* Increase padding for better touch targets */
+    }
+
+    .wcu-mobile-menu-close-wrap {
+        display: block;
+        position: sticky;
+        bottom: 0;
+        padding: 15px 20px;
+        background: inherit;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .wcu-mobile-menu-close {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 17px;
+        line-height: 18px;
+        background: var(--button-bg);
+        color: var(--button-text);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .wcu-mobile-menu-close:hover,
+    .wcu-mobile-menu-close:focus {
+        background: var(--button-bg-hover);
+        outline: none;
+    }
+}
+
+/* MLA */
+
+@media (min-width: 768px) {
+    #ml-wcu3 {
+        max-width: calc(100vw - 368px);
+    }
+}
+
+#wcu-add-mlainvite {
+    margin-bottom: 40px !important;
+}
+
+/* Dark Mode Specific Overrides for Additional Elements */
+
+body.dark-mode div,
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+    color: var(--text-color);
+}
+
+body.dark-mode .welcome-header h1 {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .wcu-settings-tab-nav {
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .wcu-settings-tab-nav p,
+body.dark-mode .wcu-settings-tab-nav div,
+body.dark-mode .wcu-settings-tab-nav span,
+body.dark-mode .wcu-settings-tab-nav li {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .wcu-settings-tab-nav a {
+    color: var(--accent-color);
+}
+
+body.dark-mode .wcu-settings-tab-nav li.active a {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+body.dark-mode .wcu-settings-tab-content {
+    background: var(--content-bg2);
+    border: 1px solid var(--border-color);
+}
+
+body.dark-mode .wpforms-container {
+    background: var(--content-bg);
+}
+
+body.dark-mode .wpforms-field-label,
+body.dark-mode .wpforms-field-sublabel,
+body.dark-mode .wpforms-submit-container button {
+    color: var(--text-color);
+}
+
+body.dark-mode .wpforms-field input,
+body.dark-mode .wpforms-field textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .wpforms-submit-container button {
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+
+body.dark-mode .wpforms-submit-container button:hover {
+    background: var(--button-bg-hover);
+}
+
+body.dark-mode .wcusage-reward-box {
+    background: var(--content-bg);
+    border: 1px solid var(--border-color);
+}
+
+body.dark-mode .wcusage-reward-text,
+body.dark-mode .wcusage-reward-description,
+body.dark-mode .wcusage-progress-bar-text {
+    color: var(--text-color);
+}
+
+body.dark-mode .wcusage-info-box {
+    background: var(--content-bg2);
+    border: 1px solid var(--border-color);
+    color: var(--text-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+body.dark-mode .wcusage-info-box span {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .wcusage-sales-stats-toggles {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .wcuTableRow,
+body.dark-mode .wcuTableRow tbody,
+body.dark-mode .wcuTableRow tr,
+body.dark-mode .wcuTableRow th,
+body.dark-mode .wcuTableRow td,
+body.dark-mode .wcuTableRow .wcuTableCell,
+body.dark-mode .wcuTableCell {
+    background: var(--content-bg2);
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color) !important;
+}
+body.dark-mode .wcuTableHead,
+body.dark-mode .wcuTableHead-summary,
+body.dark-mode .wcuTableFoot {
+    background: var(--table-header-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+}
+body.dark-mode .wcuTableFoot strong span {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode #wcu-coupon-select {
+    background: none !important;
+    color: var(--text-color) !important
+}
+
+body.dark-mode a {
+    color: var(--accent-color) !important;
+}
+body.dark-mode .wcuTableRow a {
+    color: var(--accent-color) !important;
+}
+body.dark-mode .wcuTableRow a:hover {
+    color: var(--button-bg-hover) !important;
+}
+body.dark-mode .wcusage-tab-section .wcusage-last-days a {
+    color: var(--accent-color) !important;
+}
+body.dark-mode .wcusage-tab-section .wcusage-last-days a.wcutab-active {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .wcusage-stats-title a {
+    color: var(--accent-color) !important;
+}
+body.dark-mode .wcusage-stats-title a:hover {
+    color: var(--button-bg-hover) !important;
+}
+
+body.dark-mode input, body.dark-mode select,
+body.dark-mode textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode button,
+body.dark-mode #tab-page-back {
+    background: var(--sidebar-bg) !important;
+    border: 0px solid var(--border-color) !important;
+    color: #fff !important;
+}
+
+body.dark-mode .wcu-campaigns-col1, body.dark-mode .wcu-campaigns-col2 {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .wcu-order-filters-field {
+    color: var(--text-color);
+}
+body.dark-mode .wcu-order-filters-field input, body.dark-mode .wcu-order-filters-field select, body.dark-mode .wcu-order-filters-field textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+body.dark-mode select option {
+    background: var(--input-bg);
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .wcusage-subheader {
+    color: var(--text-color);
+}
+
+body.dark-mode .payouts-box,
+body.dark-mode .referral-url-box,
+body.dark-mode .creatives-box {
+    background: var(--content-bg2);
+    border: 1px solid var(--border-color);
+    color: var(--text-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+body.dark-mode .payouts-box p, body.dark-mode .payouts-box span,
+body.dark-mode .referral-url-box p, body.dark-mode .referral-url-box span, body.dark-mode .referral-url-box strong, body.dark-mode .referral-url-box code,
+body.dark-mode .creatives-box p, body.dark-mode .creatives-box span {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .wcu-color-box {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .creatives-box-image {
+    background-image: repeating-linear-gradient(45deg, #0e0e0e 25%, transparent 25%, transparent 75%, #0e0e0e 75%, #0e0e0e), repeating-linear-gradient(45deg, #0e0e0e 25%, #1e1e1e 25%, #1e1e1e 75%, #0e0e0e 75%, #0e0e0e);
+    border: 1px solid var(--border-color);
+}
+
+body.dark-mode .wcusage-social-icon {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .sidebar {
+    background: var(--sidebar-bg) !important;
+    color: var(--sidebar-text);
+    border-right: 1px solid var(--border-color);
+}
+body.dark-mode .sidebar-logo h2 {
+    color: var(--sidebar-text) !important;
+}
+html body.dark-mode .portal-tablink {
+    background: var(--sidebar-bg) !important;
+    color: var(--sidebar-text);
+    border: none !important;
+    border-left: 4px solid transparent !important;
+}
+html body.dark-mode .portal-tablink.active {
+    background: var(--sidebar-bg-link) !important;
+    border-left: 4px solid var(--sidebar-bg-link) !important;
+}
+
+body.dark-mode .wcusage-progress-bar-text {
+    color: #515151;
+}
+
+body.dark-mode .wcusage-reward-summary-item {
+    color: #111 !important;
+}
+
+/* Google chart dark mode styles */
+
+body.dark-mode div.wcusagechart {
+    filter: invert(90%) !important;
+}
+body.dark-mode .wcusagechart svg path {
+    stroke: #000 !important;
+}
+body.dark-mode .wcusagechart svg circle {
+    fill: #000 !important;
+}
+body.dark-mode .wcusagechart svg {
+    fill: #000 !important;
+    color: #000 !important;
+}
+body.dark-mode .wcusagechart text {
+    fill: #000 !important;
+}
+
+/* Dark Mode: MLA */
+
+body.dark-mode .wcu-user-coupon-list {
+    background: var(--content-bg2);
+    border: 1px solid var(--border-color);
+    color: var(--text-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode #mla_chart_div td.google-visualization-orgchart-node {
+    background: var(--content-bg2) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}

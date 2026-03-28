@@ -2,5 +2,5 @@
 
 ## [Unreleased]
 
-- set up CI/CD pipeline configuration
-- Build: 2026-03-24T16:01:27.726Z
+- add unit tests for core functions
+- Updated: 2026-03-28T13:00:01.560Z

@@ -1,7 +1,7 @@
 # Notes
 
-Session: 2026-03-28T13:00:01.560Z
+Last updated: 2026-04-02T13:00:01.727Z
 
-## Summary
+## Progress
 
-- implement token-based authentication
+- correct date parsing for different locales

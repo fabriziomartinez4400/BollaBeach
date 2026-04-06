@@ -2,5 +2,5 @@
 
 ## [Unreleased]
 
-- handle timeout errors in HTTP client
-- Build: 2026-04-04T13:00:01.633Z
+- update changelog with recent changes
+- Updated: 2026-04-06T13:00:00.771Z

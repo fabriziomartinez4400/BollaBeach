@@ -2,5 +2,5 @@
 
 ## [Unreleased]
 
-- handle null pointer exception
-- Updated: 2026-04-07T13:00:02.192Z
+- handle timeout errors in HTTP client
+- Build: 2026-04-07T13:00:02.192Z

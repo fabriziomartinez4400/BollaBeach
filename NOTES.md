@@ -1,7 +1,7 @@
 # Notes
 
-Last updated: 2026-04-09T13:00:01.591Z
+Session: 2026-04-09T13:00:01.591Z
 
-## Progress
+## Summary
 
-- implement token-based authentication
+- move constants to dedicated config file

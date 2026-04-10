@@ -1,7 +1,7 @@
 # Notes
 
-Session: 2026-04-09T13:00:01.591Z
+Last updated: 2026-04-10T13:00:00.705Z
 
-## Summary
+## Progress
 
-- move constants to dedicated config file
+- handle null pointer exception
